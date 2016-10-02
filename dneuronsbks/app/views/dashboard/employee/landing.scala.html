@@ -1,0 +1,71 @@
+@(message: String)(employees: List[controllers.beans.EmployeeVo])
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Employees</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li class="active">
+                <strong>Employees</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+<div class="row">
+
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="wrapper wrapper-content animated fadeIn">
+					<div class="ibox">
+						<div class="ibox-title">
+						   <!--  <h5>All Employees</h5>  -->
+						
+						                <div ng-controller="lightBoxCtrl">
+						                    <button class="btn btn-primary" ng-click="openEmployeeAdd()">Add New Employee</button>
+						                </div>
+						</div>
+						<div class="ibox-content">
+						
+						<div class="project-list">
+							<table class="table table-hover">
+								<tbody>
+								@for(employee <- employees) {
+									
+									<tr>
+									    <td class="project-actions">
+									        <a href="" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+									    </td>
+									    <td class="project-title">
+									        <a ui-sref="project_detail">@employee.getDisplayName()</a>
+									    </td>
+									    <td class="project-title">
+									        <small>@employee.getCompanyName()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@employee.getFirstname()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@employee.getEmail()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@employee.getPhone()</small>
+									    </td>
+									   
+									</tr>
+								}
+								</tbody>
+							</table>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+</div>
+

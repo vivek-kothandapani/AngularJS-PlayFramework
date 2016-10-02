@@ -1,0 +1,110 @@
+@(message: String)(customers: List[controllers.beans.CustomerVo])
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Customers</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li class="active">
+                <strong>Customers</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+<div class="row">
+
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="wrapper wrapper-content animated fadeIn">
+					      <div ng-controller="lightBoxCtrl">
+					<div class="ibox">
+						<div class="ibox-title">
+						   <!--  <h5>All Customers</h5>  -->
+							
+	                    <button class="btn btn-primary" ng-click="openCustomerAdd()">Add New Customer</button>
+						                
+						</div>
+						<div class="ibox-content">
+						
+						<div class="project-list">
+							<table class="table table-hover">
+								<tbody>
+								<tr>
+									    <td class="project-actions">
+									        <small>Action</small>
+									    </td>
+									    <td class="project-title">
+									        <small>Display Name</small>
+									    </td>
+									     <td class="project-title">
+									        <small>Amount</small>
+									    </td> 
+									    <td class="project-title">
+									        <small>First Name</small>
+									    </td>
+									    <td class="project-title">
+									        <small>Last Name</small>
+									    </td>
+									    <td class="project-title">
+									        <small>Province</small>
+									    </td>
+									    <td class="project-title">
+									        <small>Country</small>
+									    </td>
+									    <td class="project-title">
+									        <small>Email</small>
+									    </td>
+									    <td class="project-title">
+									        <small>Phone</small>
+									    </td>
+									</tr>
+								@for(customer <- customers) {
+									
+									<tr>
+									    <td class="project-actions">
+									        <a href="" class="btn btn-white btn-sm" ng-click="openCustomerEdit('@customer.getDisplayName()')"><i class="fa fa-pencil"></i> Edit </a>
+									    </td>
+									    <td class="project-title">
+									        <a ui-sref="project_detail">@customer.getDisplayName()</a>
+									    </td>
+									    <td class="project-title">
+									        <small>@customer.getAmount()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@customer.getFirstName()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@customer.getLastName()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@customer.getStateCode()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@customer.getCountryCode()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@customer.getEmail()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@customer.getPhone()</small>
+									    </td>
+									   
+									</tr>
+								}
+								</tbody>
+							</table>
+						</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+</div>
+</div>
+

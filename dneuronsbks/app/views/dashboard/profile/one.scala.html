@@ -1,0 +1,45 @@
+@(message: String)(companyInfo: controllers.beans.CompanyInfoVo)
+<fieldset>
+    <h2>Company Information</h2>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Company Name *</label>
+                <input id="companyName" ng-model="formData.companyName" name="companyName" type="text" class="form-control required"  ng-init="formData.companyName='@companyInfo.getCompanyName()'" ng-minlength="8">
+            </div>
+            <div class="form-group">
+                <label>Company Address</label>
+                <input id="companyAddress1" ng-model="formData.companyAddress1" ng-init="formData.companyAddress1='@companyInfo.getCompanyAddress1()'"  name="companyAddress1" type="text" class="form-control">
+                <input id="companyAddress2" ng-model="formData.companyAddress2" ng-init="formData.companyAddress2='@companyInfo.getCompanyAddress2()'"  name="companyAddress2" type="text" class="form-control">
+            </div>
+       </div>
+    </div>
+    <div class="row">
+     	 <div class="col-lg-6">
+            <div class="form-group">
+                <label>City</label>
+                <input id="city" ng-model="formData.city" ng-init="formData.city='@companyInfo.getCity()'"  name="city" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Postal Code</label>
+                <input id="postaCode" name="postaCode"  ng-init="formData.postaCode='@companyInfo.getPostalCode()'" ng-model="formData.postaCode" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input id="phoneNumber" name="phoneNumber" ng-init="formData.phoneNumber='@companyInfo.getPhoneNumber()'"  ng-model="formData.phoneNumber" type="text" class="form-control">
+	        </div>
+         </div>
+         <div class="col-lg-6">
+         	 <div class="form-group">
+                <label>Province</label>
+                <input id="province" name="province" ng-model="formData.province" ng-init="formData.province='@companyInfo.getProvince()'" type="text" class="form-control">
+           	 </div>
+           	 <div class="form-group">
+                <label>Country</label>
+                <input id="country" name="country" ng-model="formData.country" ng-init="formData.country='@companyInfo.getCountry()'" type="text" class="form-control">
+	         </div>
+         </div>
+    </div>
+    <a  ui-sref="#" ng-click="processForm()" class="btn btn-primary">Next</a>
+</fieldset>

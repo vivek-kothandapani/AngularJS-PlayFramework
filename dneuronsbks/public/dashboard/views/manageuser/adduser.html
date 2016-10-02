@@ -1,0 +1,105 @@
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Profile</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="dashboard">Home</a>
+            </li>
+            <li class="active">
+                <strong>Add User</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="ibox">
+
+				<div class="ibox-content wizard">
+
+					<div class="wizard">
+						<div class="content">
+
+							<form name="addUserForm" class="p-lg" ng-submit="processForm()" >
+								<!-- <div>
+								{{}}
+									<alert ng-if="formData.showAlert" type="{{alert.type}}" ng-repeat="alert in formData.alerts1"
+										>{{alert.msg}}	</alert>
+									
+								</div> -->
+
+								<div ng-show="formData.showSuccessAlert" class="alert alert-success">
+									<strong>Congragulation!</strong> Successfully added the User & sent password to mailId
+								</div>
+								<div ng-show="formData.showErrorAlert">
+								<div  class="alert alert-danger">
+									<strong>Error!</strong> Some error occrred while adding user. Please try after some time.
+								</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="form-group">
+										<!-- oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('please enter your User Name')" -->
+											<label>User Name *</label>  <input autocomplete="off" id="username" name="username" ng-model="formData.username" type="text" 
+											 class="form-control" ng-model-options="{ debounce: 500 }" validate-username ng-required="true"  ng-minlength="5" />
+											 <label class="error" ng-if="formData.alreadyExist">*username exists already</label>
+											  <label class="error" ng-show="addUserForm.username.$error.minlength">*Please enter  minimum 5 letters username</label>
+										</div>
+										<div class="form-group">
+											<label>First Name</label> <input ng-required="true" id="firstName" name="firstName" ng-model="formData.firstName" type="text"
+												class="form-control"/>
+										</div>
+										
+										
+										<div class="form-group">
+											<label>Package</label> 
+												<select class="form-control m-b" id="packageName" ng-model="formData.packageName" 
+												 name="packageName" type="text">
+												 <option value="{{packageName}}" ng-repeat="packageName in packageList">{{packageName}}</option>
+										</select>
+										</div>
+										<div class="form-group">
+											<label>Phone Number</label> <input id="phoneNumber"  name="phoneNumber" ng-model="formData.phoneNumber"
+												type="text" class="form-control" ng-minlength="10" ng-required="true"/>
+												<label class="error" ng-show="addUserForm.phoneNumber.$error.minlength">*Please enter  10 digit phone number</label>
+										</div>
+
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label>E-mail</label> <input autocomplete="off" id="email" name="email" ng-model="formData.email" type="email"
+											 class="form-control" ng-required="true" >
+											 <label class="error" ng-show="addUserForm.email.$error.minlength">*Please enter  emailId</label>
+										</div>
+										<div class="form-group">
+											<label>Last Name</label> <input id="lastName" ng-required="true" name="lastName" ng-model="formData.lastName" type="text" 
+												class="form-control"/>
+										</div>
+										<div class="form-group">
+											<label>Role</label> 
+											<select class="form-control m-b" id="role" ng-model="formData.role" 
+												 name="packageName" type="text" >
+												 <option value="{{roleName}}" ng-repeat="roleName in roleList">{{roleName}}</option>
+										</select>
+										</div>
+										
+
+									</div>
+								</div>
+								<!-- <a ui-sref="#" ng-submit="processForm()" class="btn btn-primary">Add User</a> -->
+								<input type="submit" ng-submit="processForm()" name="Add User" ng-disabled="formData.alreadyExist" class="btn btn-primary"/>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

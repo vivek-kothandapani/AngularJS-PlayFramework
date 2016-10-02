@@ -1,0 +1,98 @@
+@(message: String)(account: controllers.beans.AccountInfo)
+<div >
+    <div class="row border-bottom navy-bg dashboard-header">
+        <h2>{{ 'WELCOME' | translate }}</h2>
+    </div>
+    
+    <div class="row border-bottom white-bg dashboard-header">
+        <h5>For best experience, Please use GOOGLE CHROME<br/><br/>
+Our system was created to simplify your yoursite process. <br/><br/>
+We only need you to Update your Profile and upload your Files using the menu on the left. You can view your Reports after we complete processing them.<br/>
+<br/>
+Below are the other features of this website. Please contact us if you have any questions.</h5>
+    </div>
+    
+    @{ if (account.getStatus == "NEW" ) 
+    	<div class="row ">
+        <div class="col-lg-12">
+            <div class="jumbotron">
+                <h3>First time login?  Please update your profile information to help our Booksupers serve you better!</h3>
+                <a ui-sref="profile.landing.step_one" class="btn btn-primary">Update Profile</a>
+            </div>
+        </div>
+        </div>
+     }
+    
+    <div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInUp">
+            <ul class="notes">
+                <li>
+                    <div>
+                        <h4><i class="fa fa-asterisk"></i></h4>
+                        <h4>Profile</h4>
+                        <h5>To update your company information</h5>
+                        <a ui-sref="profile.landing.step_one" class="btn btn-info">Go</a>
+                    </div>
+                </li>
+                <li>
+                   <div>
+                        <h4><i class="fa fa-file"></i></h4>
+                        <h4>File</h4>
+                        <h5>To upload and send your files to us for processing. We only accept JPG and PDF formats at this time</h5>
+                        <a ui-sref="files.1" class="btn btn-info">Go</a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h4><i class="fa fa-area-chart"></i></h4>
+                        <h4>Reports</h4>
+                        <h5>To view reports we processed for you. Please note that processing time varies. E-mail notification will be sent to you after we complete the processing</h5>
+                        <a ui-sref="reports.2" class="btn btn-info">Go</a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h4><i class="fa fa-users"></i></h4>
+                        <h4>Customer</h4>
+                        <h5>To update your Customer List</h5>
+                        <a ui-sref="customer.landing" class="btn btn-info">Go</a>
+                    </div>
+                </li>
+                <li>
+                     <div>
+                        <h4><i class="fa fa-bank"></i></h4>
+                        <h4>Bank</h4>
+                        <h5>To update you Banking Information</h5>
+                        <a ui-sref="bank.landing" class="btn btn-info">Go</a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h4><i class="fa fa-truck"></i></h4>
+                        <h4>Vendor</h4>
+                        <h5>To update your Vendor List</h5>
+                        <a ui-sref="vendor.landing" class="btn btn-info">Go</a>
+                    </div>
+                </li>
+                <li>
+                   <div>
+                        <h4><i class="fa fa-cubes"></i></h4>
+                        <h4>Employee</h4>
+                        <h5>To update your Employee List</h5>
+                        <a ui-sref="employee.landing" class="btn btn-info">Go</a>
+                    </div>
+                </li>
+                 <li>
+                   <div>
+                        <h4><i class="fa fa-key"></i></h4>
+                        <h4>Password Reset</h4>
+                        <h5>If you want to change your account password</h5>
+                        <a ui-sref="usermanager.5" class="btn btn-info">Go</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>

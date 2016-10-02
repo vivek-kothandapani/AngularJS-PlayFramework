@@ -1,0 +1,29 @@
+@(message: String)(account: controllers.beans.AccountInfo)(sameAccountId: Boolean)(clientAccountId: String)
+<div class="row border-bottom">
+<div ng-controller="searchClientCtrl">
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <span minimaliza-sidebar></span>
+               <form role="search" class="navbar-form-custom" method="post" action="assets/dashboard/views/search_results.html">
+                <div class="form-group">
+                    <!--  <input type="text" placeholder="{{ 'SEARCH' | translate }}" >
+                    <input type="text" placeholder="{{ 'SEARCH' | translate }}" class="form-control" name="top-search" id="top-search">  -->
+                    <input type="text" autocomplete="off" ng-model="clientId" placeholder="{{ 'SEARCH' | translate }}" typeahead="client for client in getSuggestion($viewValue) | limitTo:8" 
+					typeahead-on-select='onClientSelect($item)' class="form-control" name="top-search" id="top-search">
+                </div>
+                </form>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li>
+                 <span class="m-r-sm text-muted welcome-message">Hi @account.getUsername(), @account.getCompanyName(); @{if(!sameAccountId ) <h3>,Client Id : @clientAccountId</h3>}</span>
+            </li>
+            <li>
+                <a href="logout">
+                    <i class="fa fa-sign-out"></i> Log out
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+ </div>
+</div>

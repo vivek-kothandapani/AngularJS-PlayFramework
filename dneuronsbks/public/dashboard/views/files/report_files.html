@@ -1,0 +1,52 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Report Files</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="dashboard">Home</a>
+            </li>
+            <li class="active">
+                <strong>Report Files</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>Report Files</h5>
+				</div>
+				<div class="ibox-content">
+					<div ng-controller="reportFileCtrl">
+							<table class="table table-bordered table-hover table-condensed">
+								<tr style="font-weight: bold">
+									<td style="width: 5%">File Id</td>
+									<td style="width: 5%">Type</td>
+									<td style="width: 10%">File Name</td>
+								</tr>
+								<tr ng-repeat="file in fileVoList">
+									<td>
+										<label ng-model="file.fileId" form="tableform" style="width: 100%" > {{ file.fileId	|| '' }} </label>
+									</td>
+									<td>
+										<label  form="tableform" style="width: 100%" > {{ file.fileclass	|| '' }} </label>
+									</td>
+									<td>
+										<label ng-model="file.filename" form="tableform"  style="width: 100%" >
+											<a ng-href="transaction/file/view/{{file.fileId}}" target="_blank"> {{ file.filename	|| '' }}
+											</a>
+										</label>
+									</td>
+								</tr>
+							</table>
+					</div>
+            </div>
+        </div>
+
+    </div>
+</div>

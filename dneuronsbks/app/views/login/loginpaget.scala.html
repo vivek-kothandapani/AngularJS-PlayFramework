@@ -1,0 +1,139 @@
+@(title: String, isValid: String,isDeactivated:String)(content: Html)
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>yoursite | Login</title>
+
+    
+    <link href="@routes.Assets.at("dashboard/font-awesome/css/font-awesome.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.at("css/das/animate.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/das/style.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/bootstrap.min.css")" rel="stylesheet"></head>
+    <script src="@routes.Assets.at("home/js/jquery.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("home/js/jquery.dropotron.min.js")" type="text/javascript"></script>
+    <link rel="stylesheet" href="assets/home/css/skel-login.css" />
+			<link rel="stylesheet" href="assets/home/css/style-login.css" />
+			<link rel="stylesheet" href="assets/home/css/style-wide.css" />
+    
+		
+
+<body class="landing">
+<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="/#banner">yoursite.com</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a a href="#features" id="feat">Features</a></li>
+						<li><a a href="#pricing"">Pricing</a></li>
+						<li><a a href="#cta" >FAQ</a></li>
+						<li><a a href="#aboutus">About Us</a></li>
+						<li><a a href="#contactus">Contact Us</a></li>
+						<li><a href="" class="button">+1 416 832 0926</a></li>
+						<li><a href="packages" class="button">Sign Up</a></li>
+						<li><a href="login" class="button special">Login</a></li>
+					</ul>
+				</nav>
+			</header>
+	<section id="banner">
+	
+	
+
+
+ @{ if (isValid == "true" ) 
+	
+					<div  class="alert alert-danger">
+						<strong>Sorry!</strong> Invalid Username Or Password
+					</div>
+	}
+	
+	 @{ if (isValid == "resetFailure" ) 
+	
+					<div  class="alert alert-danger">
+						<strong>Sorry!</strong> Unable to reset password now. Try after sometime or contact Admin. 
+					</div>
+	}
+	
+	 @{ if (isValid == "resetSuccess" ) 
+	
+					<div  class="alert alert-success">
+						<strong>Success!</strong> Your account have been reseted. Please check your email for temparary password.
+					</div>
+	}
+	
+	 @{ if (isValid == "signup" ) 
+	
+					<div  class="alert alert-success">
+						<strong>Success!</strong> We have sent you a activation link to your email. 
+												  Goto your mail and click on the activation link to activate your acccount.
+					</div>
+	}
+	
+	
+	@{ if (isDeactivated == "true" ) 
+	<div  class="alert alert-danger"  ng-init="$scope.userValid='@isValid'">
+						<strong>Sorry!</strong> Account is currently de-activated. Contact Admin to re-activate.
+					</div>
+	}
+	
+	
+    <div class="animated fadeInDown" >
+    	<div class="row">
+    	 <div class="col-md-4">
+        </div>
+             <div class="col-md-4">
+                 <h2><img style="padding-bottom:1cm;height:100px" src="@routes.Assets.at("svg/icon-box.svg")" alt="yoursite.com"></h2>
+                <h2><font >Welcome to yoursite<font color="#10C578" >Suite.</font>com</font></h2>
+
+                <!--  <p>
+                    Perfectly designed and precisely prepared suite for hastle free yoursite.
+                </p>-->
+
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+        <div class="col-md-4">
+        </div>
+            <div class="col-md-4">
+                <div class="ibox-content">
+                    <form class="m-t" method="post" action="loginsubmit">
+                        <div class="form-group">
+                            <input type="text" name="username" class="form-control" style="color:black" placeholder="Username" required="">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" style="color:black" placeholder="Password" required="">
+                        </div>
+                        <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+                        <br/><br/><br/>
+                        
+                        
+                         <p class="text-muted text-center">
+                         <small style="font-size: 80%;" >Do not have an account?</small>
+                          <a  style="font-size: 80%;" href="packages">Sign Up</a></p>
+	                        <a href="forgotpassword">
+	                            Forgot password?
+	                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+       
+        <div class="row">
+         <div class="col-md-4">
+        </div>
+            <div class="col-md-4">
+                yoursite Inc. &copy; 
+            </div>
+        </div>
+    </div>
+    </section>
+
+</body>
+
+</html>

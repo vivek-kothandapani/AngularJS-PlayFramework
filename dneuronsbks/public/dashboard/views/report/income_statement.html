@@ -1,0 +1,71 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-8">
+        <h2>Reports</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                Reports
+            </li>
+            <li class="active">
+                <strong>Income Statement</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-4">
+        <div class="title-action">
+            <a href="/reporting/save"  class="btn btn-white"><i class="fa fa-save "></i> Save </a>
+            <a href="assets/dashboard/views/report/balancesheet.html" target="_blank" class="btn btn-primary"><i class="fa fa-print"></i> Print </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="ibox-content p-xl">
+                <div class="table-responsive m-t">
+                    <table class="table invoice-table" ng-repeat="(rootKey,rootValue) in sheetInfo">
+                        <thead>
+                        <tr ng-show="$index==0">
+                            <th>Income/Expense</th>
+                            <th>Amount</th>
+                        </tr>
+                        </thead>
+                         <thead>
+                        <tr  style="border-top:none;">
+                            <th style="border-top:none;"><h1>{{rootKey}}</h1></th>
+                            <th style="border-top:none;"></th>
+                        </tr>
+                        </thead>
+                        
+                        <tbody style="border-top:none;" ng-repeat="(subRootKey,subRootValue) in rootValue">
+                        <tr  class="success" style="border-top:none;">
+                            <td style="border-top:none;">
+                                <div>{{subRootKey}}</div>
+                            </td>
+                            <td style="border-top:none;"></td>
+                        </tr>
+                        <tr style="border-top:none;" ng-repeat="(accountKey,accountvalue) in subRootValue">
+                            <td>
+                                <small>{{accountKey}} </small>
+                            </td>
+                            <td >{{accountvalue | number : 2}} </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /table-responsive -->
+
+                <table class="table invoice-total">
+                    <tbody>
+                    <tr>
+                        <td><strong>TOTAL :</strong></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

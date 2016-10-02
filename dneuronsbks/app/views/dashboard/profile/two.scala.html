@@ -1,0 +1,65 @@
+@(message: String)(account: controllers.beans.AccountInfo)
+<fieldset>
+    <!--  <h2>More About Your Company</h2> -->
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Your Industry *</label>
+                <input id="industry" name="industry" ng-model="formData.industry" type="text" class="form-control required">
+            </div>
+            <div class="form-group">
+                <label>What you sell? *</label>
+                <input id="whatWeSell" name="whatWeSell" ng-model="formData.whatWeSell" type="text" class="form-control required">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Company Type</label>
+                <input id="companyType" name="companyType" type="text" ng-model="formData.companyType" class="form-control required email">
+            </div>
+            <div></div>
+        </div>
+    </div>
+    
+    <h2>Legal Information ( Optional )</h2>
+     <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Legal Company Name</label>
+                <input id="legalCompanyName" ng-model="formData.legalCompanyName" name="legalCompanyName" type="text" class="form-control" ng-minlength="8">
+               <!--   <p ng-show="signupForm.username.$error.minlength" class="help-block">Example of validation - Username is too short (min 8 signs)</p>
+               -->
+            </div>
+            <div class="form-group">
+                <label>Legal Company Address</label>
+                <input id="legalCompanyAddress1" ng-model="formData.legalCompanyAddress1" name="legalCompanyAddress1" type="text" class="form-control">
+                <input id="legalCompanyAddress2" ng-model="formData.legalCompanyAddress2" name="legalCompanyAddress2" type="text" class="form-control">
+            </div>
+       </div>
+    </div>
+    <div class="row">
+     	 <div class="col-lg-6">
+            <div class="form-group">
+                <label>City</label>
+                <input id="legalCity" ng-model="formData.legalCity" name="legalCity" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Postal Code</label>
+                <input id="legalPostaCode" name="legalPostaCode" ng-model="formData.legalPostaCode" type="text" class="form-control">
+            </div>
+         </div>
+         <div class="col-lg-6">
+         	 <div class="form-group">
+                <label>Province</label>
+                <input id="legalProvince" name="legalProvince" ng-model="formData.legalProvince" type="text" class="form-control">
+           	 </div>
+           	 <div class="form-group">
+                <label>Country</label>
+                <input id="legalCountry" name="legalCountry" ng-model="formData.legalCountry" type="text" class="form-control">
+	         </div>
+         </div>
+    </div>
+    <a ui-sref="profile.landing.step_one" class="btn btn-default">Previous</a>
+    <a ui-sref="profile.landing.step_three" class="btn btn-primary">Next</a>
+</fieldset>

@@ -1,0 +1,555 @@
+/*
+////////////////////////////////////////////////////////////////////////// 
+//
+// 01. FORM STYLES
+//
+////////////////////////////////////////////////////////////////////////// 
+*/
+
+.form-group {
+    position: relative;
+    float: left;
+    width: 100%;
+    max-width: 800px;
+   margin-bottom: 15px;
+}
+
+.form-group.firstname {
+   width: 47.5%;
+   margin-right: 2.5%;
+}
+
+.form-group.lastname {
+   width: 47.5%;
+   margin-left: 2.5%;
+}
+
+label {
+    display: block;
+    color: #999;
+    margin-bottom: 1px;
+    font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 13px;
+
+}
+
+label span.subtext {
+    margin-bottom: 0px;
+    color: inherit;
+    font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: 13px;
+}
+
+label span.required {
+    margin-bottom: 0px;
+    color: #ff9916;
+    line-height: 13px;
+}
+
+input[type=text], input[type=email], input[type=number], input[type=password], input[type=search], select, textarea {
+    float: left;
+    width: 47.5665%;
+    height: 35px;
+    padding: 5px 5px 5px 8px;
+    color: #000;
+    background: #FFF;
+    border: 2px solid #d8d8d8;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    transition: border .3s;
+    -webkit-transition: border .3s; /* Safari */
+}
+
+textarea {
+   width: 100%;
+   min-height: 130px;
+   margin-bottom: 5px;
+   padding: 7px 5px 6px 10px;
+}
+
+select {
+    font-family: "Arial", Helvetica, sans-serif;
+}
+
+
+::-webkit-input-placeholder {
+    font-weight: 300;
+   font-style: italic;
+}
+
+::-moz-placeholder {
+    font-weight: 300;
+   font-style: italic;
+}
+
+:-ms-input-placeholder {
+    font-weight: 300;
+   font-style: italic;
+}
+
+input:-moz-placeholder {
+    font-weight: 300;
+   font-style: italic;
+}
+
+
+input[type=text]:hover, input[type=email]:hover, input[type=number]:hover, input[type=password]:hover,  input[type=search]:hover, select:hover {
+    border: 2px solid #DDB10A;
+    transition: border .3s;
+    -webkit-transition: border .3s; /* Safari */
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=number]:focus, input[type=password]:focus,  input[type=search]:focus, select:focus {
+    border: 2px solid #E75200;
+    transition: border .3s;
+    -webkit-transition: border .3s; /* Safari */
+}
+
+input[type=text].filled, input[type=email].filled, input[type=number].filled, input[type=password].filled,  input[type=search].filled, select.filled {
+    background: #F7F7F7;
+    background-image: linear-gradient(top, #F7F7F7 0%, #FFFFFF 60%);
+    background-image: -moz-linear-gradient(top, #F7F7F7 0%, #FFFFFF 60%);
+    background-image: -o-linear-gradient(top, #F7F7F7 0%, #FFFFFF 60%);
+    background-image: -ms-linear-gradient(top, #F7F7F7 0%, #FFFFFF 60%);
+    background-image: -webkit-linear-gradient(top, #F7F7F7 0%, #FFFFFF 60%);
+    border: 2px solid #d8d8d8;
+    transition: border .3s;
+    -webkit-transition: border .3s; /* Safari */
+}
+
+input[type=text].filled:focus, input[type=email].filled:focus, input[type=number].filled:focus, input[type=password].filled:focus,  input[type=search].filled:focus, select.filled:focus {
+    border: 2px solid #E75200;
+    transition: border .3s;
+    -webkit-transition: border .3s; /* Safari */
+}
+
+input[type=text].error, input[type=email].error, input[type=number].error, input[type=password].error,  input[type=search].error, select.error {
+    border: 2px solid #CC6A6A;
+    transition: border .3s;
+    -webkit-transition: border .3s; /* Safari */
+}
+
+@media only screen and (min-width : 0px) and (max-width : 900px),
+only screen and (min-device-width : 0px) and (max-device-width : 900px) {
+
+    
+    .form-group {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: auto;
+        min-height: 75px;
+    }
+    
+    input[type=text], select {
+        max-width: 315px;
+        min-width: 270px;
+        height: 40px;
+    }
+    
+}
+
+@media only screen and (max-width : 400px),
+only screen and (max-device-width : 400px) {
+    
+    input[type=text], select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 270px;
+        height: 40px;
+    }
+
+}
+
+
+
+/*
+////////////////////////////////////////////////////////////////////////// 
+//
+// 02. FORM HELP / ERRORS
+//
+////////////////////////////////////////////////////////////////////////// 
+*/
+
+.form-group ul.parsley-error-list {
+   clear: both;
+   margin-top: 3px;
+   margin-bottom: 0 !important;
+}
+
+.form-group ul.parsley-error-list li {
+   margin-bottom: 0 !important;
+   color: #aa0707;
+   font-size: 10px;
+   line-height: 14px;
+   font-weight: 700;
+   text-align: left;
+   list-style: none !important;
+}
+
+.form-group .parsley-error {
+   border: 2px solid #CC6A6A;
+   background: #fdebeb;
+}
+
+.help-btn {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 3px 0px 0px 2px;
+    background: url(../images/help-btn.png);
+    cursor: pointer;
+    cursor: hand;
+}
+
+.help-btn:hover {
+    background: url(../images/help-btn-hover.png);
+}
+
+.hover-note {
+    display: none;
+    width: 47.5665%;
+    padding: 10px;
+    padding: 10px;
+    color: #ffffcc;
+    background: #ffcc00;
+    font-size: 12px;
+    float: right;
+    line-height: 16px;
+    border-radius: 3px;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.hover-note .arrow {
+    background: url(../images/triangle-left-orange.png);
+    background-size: 7px 14px;
+    float: left;
+    width: 7px;
+    height: 14px;
+    position: relative;
+    left: -17px;
+    display: block;
+}
+
+.hover-note .content {
+    display: block;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+input[type=text].invalid-field, select.invalid-field {
+    border: 2px solid #CC6A6A;
+    background: #fdebeb;
+}
+
+.error-icon {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 3px 0px 0px 2px;
+    background: url(../images/error-icon.png);
+}
+
+.error-note, .form-group label.error {
+    padding: 10px;
+    color: #aa0707;
+    background: #fdebeb;
+    font-size: 12px;
+    float: right;
+    line-height: 16px;
+    border-radius: 3px;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.form-group label.error {
+   width: 100%;
+   margin-top: 3px;
+   padding: 6px 10px;
+}
+
+.error-note .arrow {
+    background: url(../images/triangle-left-red.png);
+    background-size: 7px 14px;
+    float: left;
+    width: 7px;
+    height: 14px;
+    position: relative;
+    left: -17px;
+    display: block;
+}
+
+.error-note .content {
+    display: block;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+@media only screen and (max-width : 900px),
+only screen and (max-device-width : 900px) {
+
+    .error-note {
+        clear: both;
+        float: left;
+        max-width: 315px;
+        min-width: 270px;
+        margin: 15px 0;
+    }
+
+    .error-note .arrow {
+        background: url(../images/triangle-top-red.png);
+        background-size: 14px 7px;
+        width: 14px;
+        height: 7px;
+        left: 50%;
+        top: -17px;
+        margin-left: -7px;
+    }
+    
+    .hover-note {
+        clear: both;
+        float: left;
+        max-width: 315px;
+        min-width: 270px;
+        margin: 15px 0;
+    }
+    
+    .hover-note .arrow {
+        background: url(../images/triangle-top-orange.png);
+        background-size: 14px 7px;
+        width: 14px;
+        height: 7px;
+        left: 50%;
+        top: -17px;
+        margin-left: -7px;
+    }
+
+}
+
+@media only screen and (max-width : 400px),
+only screen and (max-device-width : 400px) {
+
+    .error-icon {
+        width: 30px;
+        height: 30px;
+        margin: 5px 0px 0px -35px;
+    }
+    
+    .error-note {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .help-btn {
+        width: 30px;
+        height: 30px;
+        margin: 5px 0px 0px -35px;
+    }
+    
+    .hover-note {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}
+
+
+
+/*
+////////////////////////////////////////////////////////////////////////// 
+//
+// 03. BUTTONS (ORANGE, GREEN, BORDER)
+//
+////////////////////////////////////////////////////////////////////////// 
+*/ 
+
+
+/*---------------------BUTTON STYLES---------------------*/
+
+input[type=button].btn, input[type=submit].btn, button.btn, a.btn, .btn {
+    display: inline-block;
+    width: auto;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    margin-right: 15px;
+    padding: 0px 30px;
+    color: #FFF !important;
+    text-align: center;
+    text-decoration: none !important;
+    font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 40px;
+    cursor: pointer;
+    cursor: hand;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+input[type=button].btn.small, input[type=submit].btn.small, button.btn.small, a.btn.small, .btn.small {
+   height: 32px;
+   padding: 0px 20px;
+   border-radius: 16px;
+   font-size: 14px;
+   line-height: 32px;
+}
+
+/*---------------------ORANGE BUTTON---------------------*/
+
+input[type=button].btn.orange, input[type=submit].btn.orange, button.btn.orange, a.btn.orange, .btn.orange {
+    background: #E75200;
+   border-bottom: 2px solid #AD431C;
+    transition: background, color, .3s;
+    -webkit-transition: background, color, .3s; /* Safari */
+}
+
+input[type=button].btn.orange:hover, input[type=submit].btn.orange:hover, button.btn.orange:hover, a.btn.orange:hover, .btn.orange:hover {
+    background: #FF9D74;
+    transition: background, color, .3s;
+    -webkit-transition: background, color, .3s; /* Safari */
+}
+
+input[type=button].btn.orange:active, input[type=submit].btn.orange:active, button.btn.orange:active, a.btn.orange:active, .btn.orange:active {
+    background: #AD431C;
+    transition: background, color, .3s;
+    -webkit-transition: background, color, .3s; /* Safari */
+}
+
+
+/*---------------------GREEN BUTTON---------------------*/
+
+input[type=button].btn.green, input[type=submit].btn.green, button.btn.green, a.btn.green, .btn.green {
+    background: #C3D500;
+   border-bottom: 2px solid #959300;
+    transition: background, color, .3s;
+    -webkit-transition: background, color, .3s; /* Safari */
+}
+
+input[type=button].btn.green:hover, input[type=submit].btn.green:hover, button.btn.green:hover, a.btn.green:hover, .btn.green:hover {
+    background: #D4E356;
+    transition: background, color, .3s;
+    -webkit-transition: background, color, .3s; /* Safari */
+}
+
+input[type=button].btn.green:active, input[type=submit].btn.green:active, button.btn.green:active, a.btn.green:active, .btn.green:active {
+    background: #959300;
+    transition: background, color, .3s;
+    -webkit-transition: background, color, .3s; /* Safari */
+}
+
+/*---------------------BLUE BUTTON---------------------*/
+
+input[type=button].btn.blue, input[type=submit].btn.blue, button.btn.blue, a.btn.blue, .btn.blue {
+   background: #008FBE;
+   border-bottom: 2px solid #00657F;
+    transition: background .3s;
+    -webkit-transition: background .3s; 
+}
+
+input[type=button].btn.blue:hover, input[type=submit].btn.blue:hover, button.btn.blue:hover, a.btn.blue:hover, .btn.blue:hover {
+   background: #00BCDD;
+   transition: background .3s;
+   -webkit-transition: background .3s;
+}
+
+input[type=button].btn.blue:active, input[type=submit].btn.blue:active, button.btn.blue:active, a.btn.blue:active, .btn.blue:active {
+   background: #00657F;
+   transition: background .3s;
+   -webkit-transition: background .3s; 
+}
+
+
+/*---------------------BORDERED BUTTON---------------------*/
+
+input[type=button].btn.border, input[type=submit].btn.border, button.btn.border, a.btn.border, .btn.border {
+    color: #babcbe !important;
+    background: transparent;
+    border: 1px solid #d0d1d2;
+    transition: background, color, .3s;
+    -webkit-transition: background, color, .3s; /* Safari */
+}
+
+input[type=button].btn.border:hover, input[type=submit].btn.border:hover, button.btn.border:hover, a.btn.border:hover, .btn.border:hover {
+    background: #ededed !important;
+    color: #888;
+    transition: background, color, .3s;
+    -webkit-transition: background, color, .3s; /* Safari */
+}
+
+input[type=button].btn.border:active, input[type=submit].btn.border:active, button.btn.border:active, a.btn.border:active, .btn.border:active {
+    background: #d0d1d2 !important;
+    color: #777;
+    transition: background, color, .3s;
+    -webkit-transition: background, color, .3s; /* Safari */
+}
+
+.row.blue input[type=button].btn.border, .row.blue input[type=submit].btn.border, .row.blue button.btn.border, .row.blue a.btn.border, .row.blue .btn.border {
+    color: #00657F !important;
+    background: transparent;
+    border: 1px solid #00657F;
+    transition: background, color, .3s;
+    -webkit-transition: background, color, .3s; /* Safari */
+}
+
+.row.blue input[type=button].btn.border:hover, .row.blue input[type=submit].btn.border:hover, .row.blue button.btn.border:hover, .row.blue a.btn.border:hover, .row.blue .btn.border:hover {
+    background: #00BCDD !important;
+    color: #FFFFFF !important;
+    transition: background, color, .3s;
+    -webkit-transition: background, color, .3s; /* Safari */
+}
+
+.row.blue input[type=button].btn.border:active, .row.blue input[type=submit].btn.border:active, .row.blue button.btn.border:active, .row.blue a.btn.border:active, .row.blue .btn.border:active {
+    background: #00657F !important;
+    color: #777;
+    transition: background, color, .3s;
+    -webkit-transition: background, color, .3s; /* Safari */
+}
+
+
+/*---------------------BUTTON STYLES / MOBILE---------------------*/
+
+@media only screen and (min-width : 0px) and (max-width : 900px),
+only screen and (min-device-width : 0px) and (max-device-width : 900px) {
+
+    input[type=button].btn, input[type=submit].btn, button.btn , a.btn, .btn {
+        height: 50px;
+        line-height: 50px;
+        border-radius: 25px;
+    }
+    
+   input[type=button].btn.small, input[type=submit].btn.small, button.btn.small, a.btn.small, .btn.small, .btn.small {
+      height: 40px;
+      padding: 0px 25px;
+      border-radius: 20px;
+      line-height: 40px;
+   }
+
+}
+
+@media only screen and (max-width : 400px),
+only screen and (max-device-width : 400px) {
+    
+    input[type=button].btn, input[type=submit].btn, button.btn , a.btn, .btn {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 20px;
+    }
+
+}

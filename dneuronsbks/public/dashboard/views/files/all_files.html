@@ -1,0 +1,61 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>All Files</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="dashboard">Home</a>
+            </li>
+            <li class="active">
+                <strong>All Files</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+    <div class="row">
+        <div class="col-lg-12" ng-controller="fileCtrl">
+            <div class="ibox float-e-margins">
+				<div class="col-lg-3">
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <div class="file-manager" >
+                 <a ui-sref="files.1" class="btn btn-primary btn-block">Upload Files</a>
+                 <a ui-sref="reports.2" class="btn btn-primary btn-block">Reports</a>
+                <div class="hr-line-dashed"></div>
+                <h5>Folders</h5>
+                <ul class="folder-list" style="padding: 0">
+                    <li><a href="" ng-click="changefileclass('EXPENSE_BILL')"><i class="fa fa-folder"></i> Expense</a></li>
+                    <li><a href="" ng-click="changefileclass('INVOICE')"><i class="fa fa-folder"></i> Invoice</a></li>
+                    <li><a href="" ng-click="changefileclass('OTHER')"><i class="fa fa-folder"></i> Report Files</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-9 animated fadeInRight">
+<div class="col-lg-12">
+<div class="file-box" ng-repeat="fileVo in fileVoList | filter :{fileclass : fileclassvalue}">
+	<div class="file">
+	        <a target="_blank" ng-href="transaction/file/view/{{fileVo.fileId}}">
+	            <span class="corner"></span>
+	
+	            <div class="icon">
+	                <i class="img-responsive fa fa-file"></i>
+	            </div>
+	            <div class="file-name">
+	                {{fileVo.filename}}
+	                <br/>
+	                <small>Added: {{fileVo.month}}/{{fileVo.day}}/{{fileVo.year}}</small>
+	            </div>
+	        </a>
+	    </div>
+	</div>
+</div>
+</div>
+        	</div>
+		</div>
+    </div>
+</div>

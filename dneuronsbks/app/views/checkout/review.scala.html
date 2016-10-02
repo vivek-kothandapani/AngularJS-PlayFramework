@@ -1,0 +1,58 @@
+@(message: String)
+	<div id="review-cart" ng-init="cart.direction='forward'">
+	    <table class="cart-contents">
+	        <tbody>
+	        <tr class="heading">
+	            <th class="delete">&nbsp;</th>
+	            <th class="image">&nbsp;</th>
+	            <th class="th item">{{ 'REVIEW_ITEM' | translate }}</th>
+	            <th class="th unit-price">{{ 'REVIEW_UNIT_PRICE' | translate }}</th>
+	            <th class="th quantity" style="display:none">{{ 'REVIEW_QUANTITY' | translate }}</th>
+	            <th class="th subtotal">{{ 'REVIEW_SUBTOTAL' | translate }}</th>
+	        </tr>
+	        <tr class="item-row" ng-repeat="item in cart.items | orderBy:'name'">
+	            <td class="delete">
+	               <!--   <a href="" ng-click="cart.addItem(item.id, item.name, item.price, item.basePrice, -10000000)">
+	                    <img src="/upload/images/icon_delete.png" alt="Delete item">
+	                </a> -->
+	            </td>
+	            <td class="image">
+	                <div class="wrapper">
+	                    <div ng-if="item.id == 'PROD'">
+	                        <img src="@routes.Assets.at("images/checkout/graphic_product_tangible.png")" alt="Premium 100 Package" />
+	                    </div>
+	                    <div ng-if="item.id == 'SUBS'">
+	                        <img src="@routes.Assets.at("images/checkout/graphic_product_tangible.png")" alt="Premium 100 Package" />
+	                    </div>
+	                </div>
+	            </td> 
+	            <td class="item">
+	                <p>Premium 100 Package</p>
+	            </td>
+	            <td class="unit-price">
+	                <span class="purchase_display_currency"></span>
+	                <span>{{1000 | currency: settings.symbol}}</span>
+	            </td>
+	            <td class="quantity">
+	                <input value="{{item.quantity}}" ng-model="item.quantity" name="product_index_0" maxlength="3" type="number" min="1" max="999" style="display:none">
+	            </td>
+	            <td class="subtotal">
+	                <span>{{1000 | currency: settings.symbol}}</span>
+	            </td>
+	        </tr>
+	        <tr class="shipping-row">
+	            <td colspan="6">
+	            <!--     <div class="left">{{ 'REVIEW_SHIPPING' | translate }}: <span class="instructions">{{ 'REVIEW_SHIPPING_DESC' | translate }}</span></div>  -->
+	            </td>
+	        </tr>
+	        <tr class="total-row">
+	            <td colspan="6">
+	                <span class="current-total">{{ 'REVIEW_CURRENT_TOTAL' | translate }} ({{settings.currency}}):</span>
+	                <span class="total-price"><span class="purchase_display_currency"></span>{{1000 | currency: settings.symbol}}</span>
+	            </td>
+	        </tr>
+	        </tbody>
+	    </table>
+	    <button class="btn blue" ng-click="cart.setStep(2)">{{ 'CONTINUE' | translate }}</button>
+	    <div class="clear"></div>
+	</div>

@@ -1,0 +1,97 @@
+@(message: String)(banks: List[controllers.beans.BankVo])
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Banks</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li class="active">
+                <strong>Banks</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+<div class="row">
+
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="wrapper wrapper-content animated fadeIn">
+					<div class="ibox">
+						<div class="ibox-title">
+						   <!--  <h5>All Banks</h5>  -->
+						
+						                <div ng-controller="lightBoxCtrl">
+						                    <button class="btn btn-primary" ng-click="openBankAdd()">Add New Bank</button>
+						                </div>
+						</div>
+						<div class="ibox-content">
+						
+						<div class="project-list">
+							<table class="table table-hover">
+								<tbody>
+								<tr>
+									    <td class="project-actions">
+									        <small>Action</small>
+									    </td>
+									    <td class="project-title">
+									        <small>Display Name</small>
+									    </td>
+									    <td class="project-title">
+									        <small>Company Name</small>
+									    </td>
+									    <td class="project-title">
+									        <small>Province</small>
+									    </td>
+									    <td class="project-title">
+									        <small>Country</small>
+									    </td>
+									    <td class="project-title">
+									        <small>Email</small>
+									    </td>
+									    <td class="project-title">
+									        <small>Phone</small>
+									    </td>
+									</tr>
+								@for(bank <- banks) {
+									
+									<tr>
+									    <td class="project-actions">
+									        <a href="" class="btn btn-white btn-sm"><i class="fa fa-pencil" ng-click="openBankEdit('@bank.getDisplayName()')"></i> Edit </a>
+									    </td>
+									    <td class="project-title">
+									        <a ui-sref="project_detail">@bank.getDisplayName()</a>
+									    </td>
+									    <td class="project-title">
+									        <small>@bank.getCompanyName()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@bank.getStateCode()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@bank.getCountryCode()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@bank.getEmail()</small>
+									    </td>
+									    <td class="project-title">
+									        <small>@bank.getPhone()</small>
+									    </td>
+									   
+									</tr>
+								}
+								</tbody>
+							</table>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+</div>
+

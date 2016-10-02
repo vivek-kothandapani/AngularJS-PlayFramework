@@ -1,0 +1,164 @@
+@(message: String)(products: List[model.db.bean.products.Skus])
+
+<!DOCTYPE HTML> 
+    <html ng-app="yoursiteCheckout" class="ng-scope">
+	<head>
+		<title>Service Packages</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<style type="text/css">@@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<meta name="viewport" content="width = device-width, initial-scale = 1, maximum-scale = 1, user-scalable = no">
+		<!--[if lte IE 8]><script src="@routes.Assets.at("css/ie/html5shiv.js")" type="text/javascript"></script><![endif]-->
+		<script src="@routes.Assets.at("js/lib/v1/jquery.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("js/lib/v1/jquery.dropotron.min.js")" type="text/javascript"></script>
+		<noscript>
+			<link rel="stylesheet" href="@routes.Assets.at("css/skel.css")" />
+			<link rel="stylesheet" href="@routes.Assets.at("css/style.css")" />
+			<link rel="stylesheet" href="@routes.Assets.at("css/style-wide.css")" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="@routes.Assets.at("css/ie/v8.css")" /><![endif]-->
+
+
+        <link href="@routes.Assets.at("css/checkout/cstyle.css")" type="text/css" rel="stylesheet" media="screen">
+		<link href="@routes.Assets.at("css/checkout/cstyle1.css")" type="text/css" rel="stylesheet" media="screen">
+		<link href="@routes.Assets.at("css/checkout/cstyle2.css")" type="text/css" rel="stylesheet" media="screen">
+		<link href="@routes.Assets.at("css/checkout/cstyle3.css")" type="text/css" rel="stylesheet" media="screen">
+		<link href="@routes.Assets.at("css/checkout/cstyle4.css")" type="text/css" rel="stylesheet" media="screen">
+		       
+	   <!--JS Library Reference-->
+		<script src="@routes.Assets.at("js/lib/v1/angular.js")"></script>
+		<script src="@routes.Assets.at("js/lib/v1/angular-route.js")"></script>
+		<script src="@routes.Assets.at("js/lib/v1/angular-animate.js")"></script>
+		<script src="@routes.Assets.at("js/lib/v1/angular-translate.js")"></script>
+		<script src="@routes.Assets.at("js/lib/v1/jquery.form.js")"></script>
+		<script src="@routes.Assets.at("js/lib/v1/money.min.js")"></script>
+		
+		<!--JS File Reference-->
+		<script src="@routes.Assets.at("js/app/etc/layout.js")"></script>
+		<script src="@routes.Assets.at("js/app/etc/shop.js")"></script>
+		<script src="@routes.Assets.at("js/app/etc/cart.js")"></script>
+		<script src="@routes.Assets.at("js/app/etc/settings.js")"></script>
+		<script src="@routes.Assets.at("js/app/app.js")"></script>
+		<script src="@routes.Assets.at("js/app/controllers/checkout.js")"></script>
+		<script src="@routes.Assets.at("js/app/etc/translation.js")"></script>
+		<script src="@routes.Assets.at("js/app/etc/currency.js")"></script>
+		<style>@@-webkit-keyframes popcbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi {50% {-webkit-transform:scale(1.2);}100% {-webkit-transform:scale(1);}}@@keyframes popcbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi {50% {-webkit-transform:scale(1.2);transform:scale(1.2);}100% {-webkit-transform:scale(1);transform:scale(1);}}#cbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.cbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi-blocked{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;color:#AAA !important;display:inline !important;text-decoration:line-through !important;}#cbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi br{display:block !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;}#cbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi span{background:transparent !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;}#cbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi div{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#cbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi a{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}a#cbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi-gear{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;text-decoration:none !important;position:absolute !important;display:none !important;font-size:20px !important;width:20px !important;height:20px !important;line-height:20px !important;text-align:center !important;background-color:rgba(255,255,255,.8) !important;background-image:url(chrome-extension://mlomiejdfkolichcflejclcbmpeaniij/data/images/gear.svg) !important;background-size:16px 16px !important;background-position:center center !important;background-repeat:no-repeat !important;text-decoration:none !important;}a#cbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi-gear:hover{-webkit-animation-name:popcbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi !important;animation-name:popcbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi !important;-webkit-animation-duration:0.3s !important;animation-duration:0.3s !important;}#cbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi:hover #cbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi-gear{text-decoration:none !important;display:inline-block !important;}@@media print{#cbipwofjjxsevkggbenuxstuknjuxrokcnyngtxogvi{display:none !important;}}</style>
+
+		</head>
+	<body ng-controller="checkoutController" ng-init="store.convertCurrency(settings.currency)" style="" class="ng-scope">
+
+	    <div>
+	     @common.header_nologo(message)
+	    </div>
+    <div id="wrap">
+
+        <div id="content">
+            <div id="home" class="row top" >
+                 <div id="product-selection" class="container" style="float:center">
+                     <div class="col span-12">
+                     	@for(index <- 0 until products.size){
+							<div class="product">
+	                             <div class="image">
+	                              	@if(index % 2 == 0){
+						     				<img src="@routes.Assets.at("images/checkout/graphic_product_tangible.png")" alt="Tangible Product Image">
+						    		 }else{
+						    		 		<img src="@routes.Assets.at("images/checkout/graphic_product_tangible.png")" alt="Intangible Product Image">
+						    		 }
+	                                 
+	                             </div>
+	                             <div class="details">
+	                                 <h5 class="type ng-binding">@products(index).getName()</h5>
+	                                 @if(products(index).getType() == "checkout"){
+	                                 	<h2 class="pricing ng-binding">$@products(index).getPrice()<span class="label ng-binding"> / month</span></h2>
+	                                 }
+	                                 <h5 class="name ng-binding">@products(index).getFeatures()</h5>
+	                                 <div class="form-group">
+	                                     <input id="quantity" type="hidden" ng-model="quantity" ng-init="quantity=1" maxlength="3" min="1" max="999" class="ng-pristine ng-valid ng-valid-number ng-valid-max ng-valid-min">
+	                                     <label for="quantity" class="ng-binding"></label>
+	                                 </div>
+	                                 @if(products(index).getType() == "checkout"){
+		                                 <div ng-if="settings.checkoutType != &#39;Hosted&#39;" class="ng-scope">
+		                                 	<button class="btn white small ng-binding" ng-click="cart.addItem(@products(index).getId(), @products(index).getName(), @products(index).getPrice(), @products(index).getPrice(), quantity, null, null, null);">Select</button>
+		                                 </div>
+	                                 }
+	                             </div>
+	                             <div class="clear"></div>
+                         	</div>
+						}
+
+                     </div>
+                     <div class="clear"></div>
+                 </div>
+                <form id="checkout-process" name="checkout" class="container" method="post" novalidate style="float:center">
+                    <div ng-if="!cart.complete" id="process-bar" class="col span-12">
+                        <a id="back" class="circle-item" ng-href="" ng-click="cart.setStep(cart.prevStep())">«</a>
+                        <span id="counter" class="circle-item"><span class="count">{{cart.getStep()}}</span> / {{cart.stepCount}}</span>
+                            <ul id="selector" class="clearfix" ng-class="{'five' : cart.showShipping && settings.checkoutType !== 'Inline', 'four' : cart.showShipping && settings.checkoutType == 'Inline', 
+                            'three' : !cart.showShipping && settings.checkoutType !== 'Inline', 'two' : !cart.showShipping && settings.checkoutType == 'Inline'}">
+                            <li ng-class="{'complete' : 1 < cart.nav, 'active' : 1 == cart.nav}">
+                                {{ 'STEP_CART' | translate }}
+                                <img class="arrow" src="@routes.Assets.at("images/checkout/arrow_right_thin_dark.png")" alt="arrow" />
+                                <img class="arrow active" src="@routes.Assets.at("images/checkout/arrow_right_thin_dark_green.png")" alt="arrow" />
+                                <img class="arrow complete" src="@routes.Assets.at("images/checkout/arrow_right_thin_dark_blue.png")" alt="arrow" />
+                            </li>
+                           <li ng-class="{'complete' : 2 < cart.nav, 'active' : 2 == cart.nav}">
+                                {{ 'STEP_BUS_INFO' | translate }}
+                                <img class="arrow" src="@routes.Assets.at("images/checkout/arrow_right_thin_dark.png")" alt="arrow" />
+                                <img class="arrow active" src="@routes.Assets.at("images/checkout/arrow_right_thin_dark_green.png")" alt="arrow" />
+                                <img class="arrow complete" src="@routes.Assets.at("images/checkout/arrow_right_thin_dark_blue.png")" alt="arrow" />
+                            </li>
+                            <li ng-class="{'complete' : 3 < cart.nav, 'active' : 3 == cart.nav}">
+                                {{ 'STEP_TERMS_COND' | translate }}
+                                <img class="arrow" src="@routes.Assets.at("images/checkout/arrow_right_thin_dark.png")" alt="arrow" />
+                                <img class="arrow active" src="@routes.Assets.at("images/checkout/arrow_right_thin_dark_green.png")" alt="arrow" />
+                                <img class="arrow complete" src="@routes.Assets.at("images/checkout/arrow_right_thin_dark_blue.png")" alt="arrow" />
+                            </li>
+                            <li ng-class="{'complete' : 4 < cart.nav, 'active' : 4 == cart.nav}">
+                                {{ 'STEP_BILLING' | translate }}
+                                <img ng-if="settings.checkoutType != 'Inline'" class="arrow" src="@routes.Assets.at("images/checkout/arrow_right_thin_dark.png")" alt="arrow" />
+                                <img ng-if="settings.checkoutType != 'Inline'" class="arrow active" src="@routes.Assets.at("images/checkout/arrow_right_thin_dark_green.png")" alt="arrow" />
+                                <img ng-if="settings.checkoutType != 'Inline'" class="arrow complete" src="@routes.Assets.at("images/checkout/arrow_right_thin_dark_blue.png")" alt="arrow" />
+                            </li>
+                            <li ng-if="settings.checkoutType != 'Inline'" ng-class="{'complete' : 5 < cart.nav, 'active' : 5 == cart.nav}">
+                                {{ 'STEP_PAYMENT' | translate }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="spinner-container">
+                        <img id="spinner" src="@routes.Assets.at("images/checkout/graphic_progress.gif")">
+                    </div>
+                    <div id="sections" class="col span-12">
+                        <div class="container">
+                            <div class="animate" ng-class="{'toggle' : cart.direction == 'back', 'toggle' : cart.direction == 'forward'}" ng-view></div>
+                        </div>
+                    </div>
+                    <div ng-if="!cart.complete" id="cart-summary" class="col span-12 clearfix">
+                        <div class="items">
+                            <h5>{{ 'CART_SUMMARY_TITLE' | translate }}</h5>
+                           <!-- <div class="form-group">
+                                <label>{{ 'CART_SUMMARY_ITEMS' | translate }}</label>
+                                <span>{{cart.getTotalPrice() | currency:settings.symbol}}</span>
+                            </div>
+                            <div class="form-group">
+                                <label>{{ 'CART_SUMMARY_SHIPPING' | translate }}</label>
+                                <span>{{settings.symbol}} {{cart.shippingCost}}</span>
+                            </div> -->
+                            <div class="clear"></div>
+                        </div>
+                        <div class="total">
+                            <label>{{ 'CART_SUMMARY_TOTAL' | translate }} {{cart.currency}}</label>
+                            <span>{{cart.getGrandTotal() | currency:settings.symbol}}</span>
+                        </div>
+                    </div>
+                    <div class="col span-1"></div>
+                    <div class="clear"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+			<div>@common.footer(message)</div>
+	</body>
+</html>

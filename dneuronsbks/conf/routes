@@ -1,0 +1,151 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET    /                                controllers.Application.index()
+
+#Register
+GET    /register                        controllers.Application.register() 
+
+
+#
+GET    /activationLink                  controllers.Application.activation() 
+POST    /activateAccount					controllers.ManageUsers.activateAccount()
+
+#Terms and Conditions
+GET    /terms-and-conditions            controllers.Application.terms() 
+
+#Login page
+GET    /login                           controllers.Application.login()
+POST   /loginsubmit                     controllers.Application.loginSubmit()
+GET    /office                          controllers.Application.office()
+GET    /logout                          controllers.Application.logout()
+GET    /forgotpassword                  controllers.Application.forgotpassword()
+POST   /changePassword                  controllers.Application.changePassword()
+
+#Dashboard Partial calls
+GET    /dashboard/navigation            controllers.Dashboard.getNavgiationHtml()
+GET    /dashboard/topnavbar             controllers.Dashboard.getTopnavbarHtml()
+GET    /dashboard/0                     controllers.Dashboard.getDashboardZero()
+
+#Profile Update 
+GET    /profile/landing                 controllers.Profile.landing()
+GET    /profile/1                       controllers.Profile.one()
+GET    /profile/2                       controllers.Profile.two()
+GET    /profile/3                       controllers.Profile.three()
+
+POST   /profile/submit1                 controllers.Profile.submitOne()
+POST   /profile/submit2                 controllers.Profile.submitTwo()
+POST   /profile/submit3                 controllers.Profile.submitThree()
+
+#File Upload
+#fileClass - to identify if it is expense/inovice/.. 
+POST   /upload/:fileClass               controllers.FileCtl.doIt(fileClass: String)
+GET    /file/all-files                  controllers.FileCtl.getAllFiles()
+GET    /file/report-files               controllers.FileCtl.getReportFiles()
+
+GET    /transaction/file/view/:fileid   controllers.TransactionCtl.getFile(fileid: String)
+#Transaction 
+GET    /transaction/1/landing           controllers.TransactionCtl.getLandingDataOne()
+POST   /transaction/1/save              controllers.TransactionCtl.saveExpense()
+
+GET    /transaction/2/landing           controllers.TransactionCtl.getLandingDataTwo()
+POST   /transaction/2/save              controllers.TransactionCtl.saveInvoice()
+
+#Accounting Code List
+GET    /code/init                       controllers.AccountingCodeCtl.init()
+
+#Add Customers
+GET    /customer/landing                controllers.CustomerCtl.landing()
+POST   /customer/add                    controllers.CustomerCtl.add()
+
+
+#Add Banks
+GET    /bank/landing                    controllers.BankCtl.landing()
+POST   /bank/add                        controllers.BankCtl.add()
+
+#Add Supplier
+GET    /vendor/landing                  controllers.VendorCtl.landing()
+POST   /vendor/add                      controllers.VendorCtl.add()
+POST   /vendor/edit                      controllers.VendorCtl.update()
+GET    /vendor/init                     controllers.VendorCtl.init()
+GET    /vendor/view                     controllers.VendorCtl.getVendors()
+POST   /vendor/search                   controllers.VendorCtl.suggestVendor()
+POST   /vendor/validate-name            controllers.VendorCtl.validateName()
+POST   /vendor/suggest-name             controllers.VendorCtl.suggestVendor()
+POST   /vendor/getvendor-by-name        controllers.VendorCtl.getVendorByName()
+
+#Customer
+GET    /customer/landing                controllers.CustomerCtl.landing()
+POST   /customer/add                    controllers.CustomerCtl.add()
+POST   /customer/edit                    controllers.CustomerCtl.update()
+GET    /customer/init                   controllers.CustomerCtl.init()
+POST   /customer/search                 controllers.CustomerCtl.suggestCustomer()
+POST   /customer/validate-name          controllers.CustomerCtl.validateName()
+POST   /customer/suggest-name           controllers.CustomerCtl.suggestCustomer()
+POST   /customer/getcustomer-by-name    controllers.CustomerCtl.getCustomerByName()
+
+#Employee
+GET    /employee/landing                controllers.EmployeeCtl.landing()
+POST   /employee/add                    controllers.EmployeeCtl.add()
+GET    /employee/init                   controllers.EmployeeCtl.init()
+POST   /employee/search                 controllers.EmployeeCtl.suggestEmployee()
+POST   /employee/validate-name          controllers.EmployeeCtl.validateName()
+POST   /employee/suggest-name           controllers.EmployeeCtl.suggestEmployee()
+POST   /employee/getemployee-by-name    controllers.EmployeeCtl.getEmployeeByName()
+
+#Bank
+GET    /bank/landing                    controllers.BankCtl.landing()
+POST   /bank/add                        controllers.BankCtl.add()
+GET    /bank/init                       controllers.BankCtl.init()
+POST   /bank/search                     controllers.BankCtl.suggestBank()
+POST   /bank/validate-name              controllers.BankCtl.validateName()
+POST   /bank/suggest-name               controllers.BankCtl.suggestBank()
+POST   /bank/getbank-by-name            controllers.BankCtl.getBankByName()
+
+#Dashboard Ajax calls
+GET    /accountinfo                     controllers.Dashboard.accountInfo()
+
+GET    /tdash                           controllers.Application.tdash()
+
+# Product catalog
+GET    /packages                       controllers.Application.packages()
+#GET    /packages                        controllers.Application.register()
+#GET     /products                  	controllers.Application.products()
+
+POST /signup						controllers.ManageUsers.signUp()
+
+# Checkout flow
+GET    /checkout/review                 controllers.Checkout.review()
+GET    /checkout/businfo                controllers.Checkout.businfo()
+GET    /checkout/terms                  controllers.Checkout.terms()
+GET    /checkout/billing                controllers.Checkout.billing()
+GET    /checkout/payment                controllers.Checkout.payment()
+GET    /checkout/complete               controllers.Checkout.complete()
+
+# Manage User flow
+
+GET    /manageuser/adduserdata          controllers.ManageUsers.addUsers()
+POST   /manageuser/submitadduserdata    controllers.ManageUsers.submitAddUsers()
+POST   /manageuser/validateusers        controllers.ManageUsers.userNameValidation()
+GET    /manageuser/getInitialData       controllers.ManageUsers.getInitialData()
+POST   /manageuser/searchUser           controllers.ManageUsers.searchUser()
+POST   /manageuser/suggestUser          controllers.ManageUsers.suggestUsers()
+POST   /manageuser/deactivate           controllers.ManageUsers.deactivate()
+POST   /manageuser/reactivate           controllers.ManageUsers.reactivate()
+POST   /manageuser/resetPassword        controllers.ManageUsers.resetPassword()
+POST   /manageuser/set-clientid         controllers.ManageUsers.setClientId()
+
+# Tax Rule 
+GET    /taxrule/all-rules               controllers.TaxRuleCtl.getTaxRules()
+POST   /taxrule/suggest-rule           controllers.TaxRuleCtl.suggestTaxRule()
+
+# Reporting flow
+GET    /reporting/balancesheet          controllers.Reporting.getBalanceSheet()
+GET    /reporting/income-statement      controllers.Reporting.getIncomeStatement()
+GET    /reporting/save                  controllers.Reporting.save()
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET    /assets/*file                    controllers.Assets.at(path="/public", file)

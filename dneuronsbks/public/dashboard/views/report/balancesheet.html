@@ -1,0 +1,78 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-8">
+        <h2>Reports</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                Reports
+            </li>
+            <li class="active">
+                <strong>Balance Sheet</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-4">
+        <div class="title-action">
+            <a href="/reporting/save"  class="btn btn-white"><i class="fa fa-save "></i> Save </a>
+            <a href="assets/dashboard/views/report/balancesheet.html" target="_blank" class="btn btn-primary"><i class="fa fa-print"></i> Print </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="ibox-content p-xl">
+                <div class="table-responsive m-t">
+                    <table class="table invoice-table" ng-repeat="codeGroupVo in sheetInfo.codeGroupVoList">
+                        <thead>
+                        <tr ng-show="$index==0">
+                            <th>Chart of Accounts</th>
+                            <th>Amount</th>
+                        </tr>
+                        </thead>
+                         <thead>
+                        <tr  style="border-top:none;">
+                            <th style="border-top:none;"><h1>{{codeGroupVo.name}}</h1></th>
+                            <th style="border-top:none;"></th>
+                        </tr>
+                        </thead>
+                        
+                        <tbody style="border-top:none;" ng-repeat="codeSubGroupVo in codeGroupVo.codeSubGroupVoList">
+	                        <tr  class="success" style="border-top:none;">
+	                            <td style="border-top:none;">
+	                                <div>{{codeSubGroupVo.name}}</div>
+	                            </td>
+	                            <td style="border-top:none;"></td>
+	                        </tr>
+	                        <tr style="border-top:none;padding-right:10px" ng-repeat="codeAccountTypeVo in codeSubGroupVo.codeAccountTypeVoList">
+	                            <td>
+	                                <small>{{codeAccountTypeVo.name}} </small>
+	                            </td>
+	                            <td >{{codeAccountTypeVo.amount | number : 2}} </td>
+	                        </tr>
+	                        <tr style="border-top:2px;border-bottom:2px;color:blue">
+	                            <td>
+	                                <small>Total {{codeSubGroupVo.name}}</small>
+	                            </td>
+	                            <td  >{{codeSubGroupVo.amount | number : 2}} </td>
+	                        </tr>
+	                        
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /table-responsive 
+
+                <table class="table invoice-total">
+                    <tbody>
+                    <tr>
+                        <td><strong>TOTAL :</strong></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table> -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+@(message: String)
+	<div id="review-cart" ng-init="cart.direction='forward'">
+	    <table class="cart-contents">
+	        <tbody>
+	        <tr class="shipping-row">
+	           Terms And Conditions
+	        </tr>
+	        <tr class="total-row">
+	           By clicking "Continue" button you agree to terms and conidtions of yoursite.com
+	        </tr>
+	        </tbody>
+	    </table>
+	    <button class="btn blue" ng-click="cart.setStep(4)">{{ 'CONTINUE' | translate }}</button>
+	    <div class="clear"></div>
+	</div>

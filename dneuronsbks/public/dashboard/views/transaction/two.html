@@ -1,0 +1,139 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Transactions</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="dashboard">Home</a>
+            </li>
+            <li class="active">
+                <strong>Invoice Transactions</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeIn">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+              <!--   <div class="ibox-title">
+                    <h5>Angular wizard</h5>
+
+                    <div ibox-tools></div>
+                </div> -->
+                    <!-- <h2>
+                        Wizard
+                    </h2>
+
+                    <p>
+                        This example show how to use ui-router to create wizard like form.
+                        <br/>
+                        <strong>Data from ng-model.</strong><br/>
+                        <code>{{ formData}}</code>
+                    </p> -->
+				<div class="ibox-title">
+					<h5>New Transactions</h5>
+
+				</div>
+				<div class="ibox-content">
+					<div ng-controller="transactionTwoCtrl">
+						<form name="tableform2" >
+							<!-- table -->
+							<table class="table table-bordered table-hover table-condensed">
+								<tr style="">
+									<!--  <td style="width: 5%">Transaction Id</td> -->
+									<td style="width: 1%">File</td>
+									<td style="width: 2%">Date</td>
+									<td style="width: 5%">Reference #</td>
+									<td style="width: 5%">Customer  <button ng-controller="lightBoxCtrl" class="btn btn-primary" ng-click="openCustomerAdd()"><i class="fa fa-plus-circle"></i></button></td>
+									<td style="width: 5%">Gross Amount</td>
+									<td style="width: 5%">Method of Payment</td>
+									<td style="width: 10%">Remarks</td>
+									<td style="width: 10%">Account Type</td>
+									<!--<td style="width: 1%">Term</td>-->
+									<td style="width: 5%">Tax</td>
+									<td style="width: 1%">Tax Amount</td>
+									<td style="width: 1%">Net Amount</td>
+									<td style="width: 1%"><span></span></td>
+									<td style="width: 1%"><span></span></td>
+								</tr>
+								<tr ng-repeat="transaction in txList | filter:filterTransaction">
+									<td>
+										<span type="text" ng-model="transaction.filename" form="tableform2" style="width: 100%" ><a ng-href="transaction/file/view/{{transaction.fileId}}" target="_blank"> {{ transaction.fileId	|| '' }}</a> </span>
+									</td>
+									<td>
+										<input type="date" ng-model="transaction.txDate" form="tableform2" style="width: 100%" value="{{transaction.txDate | date: yyyy-MM-dd}}"> 
+									</td>
+									<td>
+										<input type="text" ng-model="transaction.referenceId" form="tableform2" style="width: 100%" value="{{ transaction.referenceId	|| '' }}">
+									</td>
+									<td>
+						                <input type="text" ng-model="transaction.customerVo.displayName" placeholder="Customer..." typeahead="customerName for customerName in getLocation($viewValue) | limitTo:8" 
+												typeahead-on-select='onSelect($item,transaction.transactionId)' class="form-control"  form="tableform2" style="width: 100%" value="{{ transaction.customerVo.displayName	|| '' }}">
+									</td>
+									<td>
+										<input type="text" ng-model="transaction.amount"  form="tableform2" style="width: 100%" value="{{ transaction.amount	|| '' }}">
+									</td>
+									<td>
+										  {{transaction.paymentEntity.name || transaction.paymentMethod }}
+										<!--  <select id="paymentEntity_chosen_select_chosen" chosen class="chosen-select" style="width:200px;" 
+										 ng-model="transaction.paymentEntity" form="tableform2" ng-options="method.name for method in paymentMethodsVo">
+	           							 </select> -->
+	           							 
+	           							  <ui-select ng-model="transaction.paymentEntity" theme="select2" ng-disabled="disabled" style="min-width: 200px;">
+									    <ui-select-match placeholder="Select an option">{{$select.selected.name}}</ui-select-match>
+									    <ui-select-choices repeat="method in paymentMethodsVo | filter:$select.search">
+									     <div ng-bind-html="method.name | highlight: $select.search"></div>
+									    </ui-select-choices>
+									  </ui-select>
+									</td>
+									<td>
+										<input type="text" ng-model="transaction.remarks" form="tableform2" style="width: 100%" value="{{ transaction.remarks	|| '' }}">
+									</td>
+									<td>
+									   <!--   {{transaction.codeVo.name || ''}} -->
+									 	
+		           						 <ui-select ng-model="transaction.codeVo" theme="select2" ng-disabled="disabled" style="min-width: 200px;max-width: 200px;">
+										    <ui-select-match placeholder="Select an option">{{$select.selected.name}}</ui-select-match>
+										    <ui-select-choices group-by="'acoountTypeCodeName'" repeat="a in codeMasterVo.codeVoList | filter:$select.search ">
+										      <div ng-bind-html="a.name | highlight: $select.search"></div>
+										    </ui-select-choices>
+										  </ui-select>
+	           							
+	           							
+									</td>
+									<td>
+										 <input type="text" ng-model="transaction.taxType" placeholder="CA-ON-Ontario" typeahead="ruleName for ruleName in suggestTaxRule($viewValue) | limitTo:8" 
+												typeahead-on-select='onTaxRuleSuggestSelect($item,transaction)' class="form-control"  form="tableform" style="width: 100%" value="{{ transaction.taxType	|| '' }}">
+									</td>
+									<td>
+										<input type="text" ng-model="transaction.tax" form="tableform" style="width: 100%" value="{{ transaction.tax	|| '' }}">
+									</td>
+									<td>
+										<input type="text" ng-model="transaction.netAmount" form="tableform" style="width: 100%" value="{{ transaction.netAmount	|| '' }}">
+									</td>
+									<td>
+										<button type="button" ng-click="duplicateTransaction(transaction , $index)"
+											class="btn btn-primary pull-right"><i class="fa fa-files-o"></i></button>	
+									</td>
+									<td>
+										<button type="button" ng-click="deleteTransaction(transaction, $index )"
+											class="btn btn-danger pull-right"><i class="fa fa-trash-o"></i></button>
+									</td>
+								</tr>
+							</table>
+
+							<div class="btn-form">
+								<button type="button" ng-click="addTransaction()" class="btn btn-primary pull-right">Add Transaction</button>
+								<button type="submit" ng-click="saveMyData()" class="btn btn-primary">Save</button>
+							</div>
+						</form>
+					</div>
+	<br/>
+            </div>
+        </div>
+    </div>
+</div>

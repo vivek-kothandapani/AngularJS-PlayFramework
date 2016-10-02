@@ -1,0 +1,97 @@
+@(message: String)(account: controllers.beans.AccountInfo)
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element" dropdown>
+                     <!-- <img alt="image" src="assets/dashboard/img/profile_small.jpg"/> -->
+                    <img style="height:50px" src="@routes.Assets.at("svg/icon-box.svg")" alt="yoursite.com">
+                    <a class="dropdown-toggle" dropdown-toggle href>
+                            <span class="clear">
+                                <!--  <span class="block m-t-xs">
+                                    <strong class="font-bold">yoursite <sup>&#174;</sup></strong>
+                             </span>-->
+                                <span class="text-muted text-xs block">yoursite<b class="caret"></b></span>
+                            </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="packages">Pricing</a></li>
+                        <li><a href="/">Contact Us</a></li>
+                        <li class="divider"></li>
+                        <li><a href="logout">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IZ+
+                </div>
+            </li>
+            <li ng-class="{active: $state.includes('dashboard')}">
+            	<a ui-sref="dashboard.0"><i class="fa fa-th-large"></i><span class="nav-label">{{ 'DASHBOARD' | translate }}</span></a>
+               <!--  <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">{{ 'DASHBOARD' | translate }}</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('dashboards')}">
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_1">{{ 'DASHBOARD' | translate }} v.1</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_2">{{ 'DASHBOARD' | translate }} v.2</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_3">{{ 'DASHBOARD' | translate }} v.3</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_4_1">{{ 'DASHBOARD' | translate }} v.4</a></li>
+                </ul> -->
+            </li>
+            
+            <li ui-sref-active="active"><a ui-sref="profile.landing.step_one"><i class="fa fa-asterisk"></i><span class="nav-label">Profile</span></a></li>
+            
+			<li ng-class="{active: $state.includes('files')}">
+                <a ui-sref="files"><i class="fa fa-file"></i> <span class="nav-label">Files</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('files')}">
+                    <li ui-sref-active="active"><a ui-sref="files.1">Upload</a></li>
+                    <li ui-sref-active="active"><a ui-sref="files.2">All Files</a></li>
+                </ul>
+            </li>
+			
+			<li ng-class="{active: $state.includes('transaction')}">
+                <a ui-sref="transaction.landing"><i class="fa fa-book"></i> <span class="nav-label">Transactions</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('transaction')}">
+                    <li ui-sref-active="active"><a ui-sref="transaction.1">Bills and Expenses</a></li>
+                    <li ui-sref-active="active"><a ui-sref="transaction.2">Invoices</a></li>
+                    <li ui-sref-active="active"><a ui-sref="transaction.3">Others</a></li>
+                </ul>
+            </li>
+            
+           	<li ng-class="{active: $state.includes('reports')}">
+                <a ui-sref="reports"><i class="fa fa-area-chart"></i> <span class="nav-label">Reports</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('reports')}">
+                     <!-- <li ui-sref-active="active"><a ui-sref="reports.1">Summary</a></li>-->
+                    <li ui-sref-active="active"><a ui-sref="reports.2">Balance Sheet</a></li>
+                    <li ui-sref-active="active"><a ui-sref="reports.3">Income Statement</a></li>
+                </ul>
+            </li>
+			
+			<li ui-sref-active="active"><a ui-sref="customer.landing"><i class="fa fa-users"></i><span class="nav-label">Customers</span></a></li>
+			
+            <li ui-sref-active="active"><a ui-sref="bank.landing"><i class="fa fa-bank"></i><span class="nav-label">Banks</span></a></li>
+			
+            <li ui-sref-active="active"><a ui-sref="vendor.landing"><i class="fa fa-truck"></i><span class="nav-label">Vendors</span></a></li>
+            
+            <li ui-sref-active="active"><a ui-sref="employee.landing"><i class="fa fa-cubes"></i><span class="nav-label">Employees</span></a></li>
+           
+			<li ng-class="{active: $state.includes('usermanager')}">
+                <a ui-sref="transaction.landing"><i class="fa fa-user"></i> <span class="nav-label">Manage Users</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('usermanager')}">
+                    <li ui-sref-active="active"><a ui-sref="usermanager.1">Add User</a></li>
+                    <li ui-sref-active="active"><a ui-sref="usermanager.2">Deactivate User</a></li>
+                    <li ui-sref-active="active"><a ui-sref="usermanager.4">Reactivate User</a></li>
+                    <li ui-sref-active="active"><a ui-sref="usermanager.3">Password Reset</a></li>
+                </ul>
+            </li>
+            
+          <!--   <li ng-class="{active: $state.includes('dashboards')}">
+                <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">{{ 'DASHBOARD' | translate }}</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('dashboards')}">
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_1">{{ 'DASHBOARD' | translate }} v.1</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_2">{{ 'DASHBOARD' | translate }} v.2</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_3">{{ 'DASHBOARD' | translate }} v.3</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_4_1">{{ 'DASHBOARD' | translate }} v.4</a></li>
+                </ul>
+            </li> -->
+        </ul>
+    </div>
+</nav>

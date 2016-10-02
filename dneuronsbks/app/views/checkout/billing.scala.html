@@ -1,0 +1,123 @@
+@(message: String)
+  
+    <input type="hidden" name="submitted" value="false" />
+	<div id="billing-information">
+		<h5>{{ 'BILLING_TITLE' | translate }}</h5>
+		<div ng-if="cart.showShipping">
+		    <div class="checkbox-billing">
+		        <input type="checkbox" id="same-as-shipping" name="same-as-shipping" ng-model="cart.copyAddress" value=1>
+		        <label for="same-as-shipping">{{ 'SAME_BILLING' | translate }}</label>
+		        <div class="clear"></div>
+		    </div>
+		</div>
+		<div class="fields" ng-class="{'hidden' : cart.copyAddress == 1}">
+		<!-- country -->
+		<div class="form-group">
+			<label for="billing-country">{{ 'COUNTRY' | translate }} <span class="required">*</span></label>
+			<select id="billing-country" ng-model="cart.billing.country" name="billing_country" autocomplete="on" required>
+				<option value="">- {{ 'CHOOSE_COUNTRY' | translate }} -</option>
+				<option value="USA">United States</option>
+				<option value="GBR">United Kingdom</option>
+				<option value="CAN">Canada</option>
+			</select>
+			<div class="validator"></div>
+			<span ng-show="checkout.submitted == true && checkout.billing_country.$invalid" class="error-note billing-country-error-note">{{ 'ERROR_COUNTRY' | translate }}</span>
+			</div>
+			<!-- full name -->
+			<div class="form-group">
+			    <label for="billing-full-name">{{ 'FULL_NAME' | translate }} <span class="required">*</span></label>
+			    <input id="billing-full-name" type="text" name="billing_name" ng-model="cart.billing.name" autocomplete="on" required />
+			    <div class="validator"></div>
+			    <span ng-show="checkout.submitted == true && checkout.billing_name.$invalid" class="error-note billing-name-error-note">{{ 'ERROR_NAME' | translate }}</span>
+			</div>
+			<!-- address 1 -->
+			<div class="form-group">
+			    <label for="billing-address-1">{{ 'ADDRESS_1' | translate }} <span class="required">*</span></label>
+			    <input id="billing-address-1" type="text" ng-model="cart.billing.address1" name="billing_street_address" autocomplete="on" required />
+			    <div class="validator"></div>
+			    <span ng-show="checkout.submitted == true && checkout.billing_street_address.$invalid" class="error-note billing-address-1-error-note">{{ 'ERROR_ADDRESS_1' | translate }}</span>
+			</div>
+			<!-- address 2 -->
+			<div class="form-group">
+			    <label for="billing-address-2">{{ 'ADDRESS_2' | translate }}</label>
+			    <input id="billing-address-2" type="text" ng-model="cart.billing.address2" name="billing_street_address2" autocomplete="on">
+			    <div class="validator"></div>
+			    <span ng-show="checkout.submitted == true && checkout.billing_street_address2.$invalid" class="error-note billing-address-2-error-note">{{ 'ERROR_ADDRESS_2' | translate }}</span>
+			</div>
+			<!-- city -->
+			<div class="form-group city">
+			    <label for="billing-city">{{ 'CITY' | translate }} <span class="required">*</span></label>
+			    <input id="billing-city" type="text" ng-model="cart.billing.city" name="billing_city" autocomplete="on" required />
+			    <div class="validator"></div>
+			    <span ng-show="checkout.submitted == true && checkout.billing_city.$invalid" class="error-note billing-city-error-note">{{ 'ERROR_CITY' | translate }}</span>
+			</div>
+			<!-- state -->
+			<div class="form-group state">
+			    <label for="billing-state">{{ 'STATE' | translate }}</label>
+			    <input id="billing-state" type="text" name="billing_state" ng-model="cart.billing.state" autocomplete="on">
+			    <div class="validator"></div>
+			    <span ng-show="checkout.submitted == true && checkout.billing_state.$invalid" class="error-note billing-state-error-note">{{ 'ERROR_STATE' | translate }}</span>
+			</div>
+			<!-- zip/postal -->
+			<div class="form-group zip">
+			    <label for="billing-postal">{{ 'POSTAL' | translate }}</label>
+			    <input id="billing-postal" type="text" name="billing_zip" ng-model="cart.billing.zip" autocomplete="on" />
+			    <div class="validator"></div>
+			    <span ng-show="checkout.submitted == true && checkout.billing_zip.$invalid" class="error-note billing-postal-error-note">{{ 'ERROR_POSTAL' | translate }}</span>
+			</div>
+			<!-- phone -->
+			<div class="form-group phone">
+			    <label for="phone">{{ 'PHONE' | translate }} <span class="required">*</span></label>
+			    <input id="phone" type="tel" name="phone" ng-model="cart.billing.phone" autocomplete="on" required />
+			    <div class="validator"></div>
+			    <span ng-show="checkout.submitted == true && checkout.phone.$invalid" class="error-note phone-error-note">{{ 'ERROR_PHONE' | translate }}</span>
+			</div>
+			<!-- phone extension -->
+			<div class="form-group extension">
+			    <label for="phone">Ext</label>
+			    <input id="phone-extension" type="tel" name="phone_extension" ng-model="cart.billing.phoneExt" autocomplete="on">
+			    <div class="validator"></div>
+			    <span ng-show="checkout.submitted == true && checkout.phone_extension.$invalid" class="error-note phone-extension-error-note">Please include only numbers and optional spaces and dashes for your extension. Extension can only be 16 digits long.</span>
+			</div>
+			
+			<!-- email -->
+			<div class="form-group">
+			    <label for="email">{{ 'EMAIL' | translate }}</label>
+			    <input id="email" type="text" name="email" ng-model="cart.billing.email" autocomplete="on" required />
+			    <div class="validator"></div>
+			    <span ng-show="checkout.submitted == true && checkout.email.$invalid" class="error-note email-error-note">{{ 'ERROR_EMAIL' | translate }}</span>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="billing-reminder" ng-class="{'hidden' : cart.copyAddress != 1}">
+		    <div class="reminder"><label>{{ 'FULL_NAME' | translate }}:</label> {{cart.shipping.name}}</div>
+		    <div class="reminder"><label>{{ 'ADDRESS_1' | translate }}:</label> {{cart.shipping.address1}}</div>
+		    <div class="reminder"><label>{{ 'ADDRESS_2' | translate }}:</label> {{cart.shipping.address2}}</div>
+		    <div class="reminder"><label>{{ 'CITY' | translate }}:</label> {{cart.shipping.city}}</div>
+		    <div class="reminder"><label>{{ 'STATE' | translate }}:</label> {{cart.shipping.state}}</div>
+		    <div class="reminder"><label>{{ 'POSTAL' | translate }}:</label> {{cart.shipping.zip}}</div>
+		    <div class="reminder"><label>{{ 'COUNTRY' | translate }}:</label> {{cart.shipping.country}}</div>
+		    <div class="reminder"><label>{{ 'PHONE' | translate }}:</label> {{cart.shipping.phone}}</div>
+		    <div class="reminder"><label>{{ 'EMAIL' | translate }}:</label> {{cart.shipping.email}}</div>
+		</div>
+		
+		<div ng-if="settings.checkoutType != 'Inline' && checkout.$invalid && cart.copyAddress != 1">
+		    <button class="btn blue" ng-click="checkout.submitted=true;">{{ 'CONTINUE' | translate }}</button>
+		</div>
+		<div ng-if="settings.checkoutType != 'Inline' && checkout.$invalid && cart.copyAddress == 1">
+		    <button class="btn blue" ng-click="checkout.submitted=false; cart.copyShipping(); cart.setStep(cart.nextStep(5));">{{ 'CONTINUE' | translate }}</button>
+		</div>
+		<div ng-if="settings.checkoutType != 'Inline' && checkout.$valid">
+		    <button class="btn blue" ng-click="cart.setStep(cart.nextStep(5)); checkout.submitted=false;">{{ 'CONTINUE' | translate }}</button>
+		</div>
+		<div ng-if="settings.checkoutType == 'Inline' && checkout.$invalid && cart.copyAddress != 1">
+		    <button class="btn blue" ng-click="checkout.submitted=true;">{{ 'COMPLETE_CHECKOUT' | translate }}</button>
+		</div>
+		<div ng-if="settings.checkoutType == 'Inline' && checkout.$invalid && cart.copyAddress == 1">
+		    <button class="btn blue" ng-click="cart.copyShipping(); cart.checkoutInline({language: settings.language, currency: settings.currency});">{{ 'COMPLETE_CHECKOUT' | translate }}</button>
+		</div>
+		<div ng-if="settings.checkoutType == 'Inline' && checkout.$valid">
+		    <button class="btn blue" ng-click="cart.checkoutInline({language: settings.language, currency: settings.currency});">{{ 'COMPLETE_CHECKOUT' | translate }}</button>
+		</div>
+		<div class="clear"></div>
+	</div>

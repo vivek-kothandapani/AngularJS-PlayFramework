@@ -1,0 +1,310 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>yoursite.com</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="@routes.Assets.at("home/css/ie/html5shiv.js")" type="text/javascript"></script><![endif]-->
+		<script src="@routes.Assets.at("home/js/jquery.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("home/js/jquery.dropotron.min.js")" type="text/javascript"></script>
+		<script src="assets/home/js/jquery.scrollgress.min.js"></script>
+		<script src="@routes.Assets.at("home/js/skel.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("home/js/skel-layers.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("home/js/init.js")" type="text/javascript"></script>
+		<noscript>
+			<link rel="stylesheet" href="assets/home/css/skel.css" />
+			<link rel="stylesheet" href="assets/home/css/style.css" />
+			<link rel="stylesheet" href="assets/home/css/style-wide.css" />
+		</noscript>
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/home/css/ie/v8.css" /><![endif]-->
+		<script type="text/javascript">
+		$(function () { 
+		$('.expand').click(function(){
+		    $(this).next(".collapse").slideToggle("fast");
+		    if($(this).children("span").hasClass("plus")){
+		    	$(this).children("span").removeClass("plus").addClass("minimize");
+		    }
+		    else{
+		    	$(this).children("span").removeClass("minimize").addClass("plus");
+		    }
+		});
+		});
+		$('#feat.a').click(function(){
+		    $('html, body').animate({
+		        scrollTop: $( $.attr(this, 'href') ).offset().top
+		    }, 500);
+		    return false;
+		});
+		</script>
+		<style>
+		.plus:after{
+		content: "+";
+		}
+		
+		.minimize:after{
+		content: "-";
+		}
+		</style>
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="/#banner">yoursite.com</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a a href="#features" id="feat">Features</a></li>
+						<li><a a href="#pricing"">FAQ</a></li>
+						<!--  <li><a a href="#cta" >FAQ</a></li>-->
+						<li><a a href="#aboutus">About Us</a></li>
+						<li><a a href="#contactus">Contact Us</a></li>
+						<li><a href="" class="button">+1 416 754 5500​</a></li>
+						<li><a href="packages" class="button">Request Invite</a></li>
+						<li><a href="login" class="button special">Login</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				 <!-- <h2>yoursite.com</h2>  -->
+				 <h2><img style="padding-bottom:1cm;height:150px" src="@routes.Assets.at("svg/icon-box.svg")" alt="yoursite.com"></h2>
+				<h2><font >yoursite<font color="#10C578" >Suite.</font>com</font></h2>
+				<p>We manage the yoursite, So you can manage the business</p>
+				<ul class="actions">
+					<li><a href="packages" class="button special">Request Invite</a></li>
+					<li><a href="login" class="button">Login</a></li>
+				</ul>
+			</section>
+
+		<!-- Main -->
+			<section id="main" class="container">
+
+				<section class="box special">
+					<header class="major">
+						<h3>Whether you are managing a start-up, small business or large company, yoursite.com is your partner for your yoursite needs.
+						</h3>
+						<p>We understand that running a business require a lot of your time and attention.
+						<br/>yoursite.com is your partner that provide you fast and efficient yoursite service for your business operation, accounting and tax needs.</p>
+					</header>
+					<span class="image featured"><img src="assets/home/images/pic01.jpg" alt="" /></span>
+				</section>
+
+				<section id="features">
+					<header class="major">
+						<h3>Features</h3>
+					</header>
+					<section class="box special features" >
+						<div class="features-row">
+							<section>
+								<span class="icon major fa-bolt accent2"></span>
+								<h3>Fast yoursite</h3>
+								<p>You only need to upload or send your bills, receipts and bank statements and yoursite.com will take care of the rest.</p>
+							</section>
+							<section>
+								<span class="icon major fa-area-chart accent3"></span>
+								<h3>Interactive Reports</h3>
+								<p>yoursite.com provides you interactive reports that have critical information you need in making business decisions.</p>
+							</section>
+						</div>
+						<div class="features-row">
+							<section>
+								<span class="icon major fa-cloud accent4"></span>
+								<h3>Cloud Based</h3>
+								<p>yoursite.com utilizes the cloud based technologies to maximize its speed and efficiency to provide you the accounting information you need.</p>
+							</section>
+							<section>
+								<span class="icon major fa-lock accent5"></span>
+								<h3>Secured Solution</h3>
+								<p>yoursite.com uses the different security solution to ensure we meet your need of protecting the data and information you provide us.</p>
+							</section>
+						</div>
+					</section>
+				</section>
+
+				<section id="pricing">
+					<header  class="major">
+							<h3>FAQ</h3>
+					</header>
+					<div class="row">
+					
+						<br/>
+						<div class="6u 12u(narrower)">
+	
+							<section class="box special">
+								<span class="image featured"><img src="assets/home/images/pic02.jpg" alt="" /></span>
+								<h3>Your Partner to your Success​</h3>
+								<p>As your partner, yoursite.com value the success of your business.  ​</p>​
+<p>We want to be part of the growth of your business, from start-up, until your reach the top of your industry.​</p>​
+<p>We manage all your yoursite services needs throughout the year.​</p>
+							</section>
+	
+						</div>
+						<div class="6u 12u(narrower)">
+	
+							<section class="box special">
+								<span class="image featured"><img src="assets/home/images/pic03.jpg" alt="" /></span>
+								<h3>Simplicity and Innovation</h3>
+								<p>Using innovation and technology, yoursite.com have simplified the process to manage your yoursite service needs. </p>
+								<p>We have remove the complexity of the yoursite process allowing you to focus your time and energy in growing the business. </p>
+								<br/><br/>
+							</section>
+	
+						</div>
+						<br/>
+						<div class="6u 12u(narrower)">
+	
+							<section class="box special">
+								<span class="image featured"><img src="assets/home/images/pic02.jpg" alt="" /></span>
+								<h3>Awesome Reports</h3>
+								<p>yoursite.com have utilized the latest technology to create reports that works on your laptop, tablet or smartphone.</p>
+								<p>This allows you to analyze the financial information at your office, browse while having a coffee or share the financial information during a meeting or presentation.</p>
+								<br/>
+							</section>
+	
+						</div>
+						<div class="6u 12u(narrower)">
+	
+							<section class="box special">
+								<span class="image featured"><img src="assets/home/images/pic03.jpg" alt="" /></span>
+								<h3>Your Own Accounting Team​</h3>
+								<p>As you partner, yoursite.com can provide you an Accounting Team composed of internationally trained and certified  accountants with credentials from Canada, US and United Kingdom.</p>
+								<p>yoursite.com have partnered with reputable accounting firms across Canada to provide you an accounting team that have the experience and knowledge in managing different financial situations.</p>
+							</section>
+	
+						</div>
+					</div>
+				</section>
+
+			</section>
+
+		<!-- FAQ Section 
+			<section id="cta">
+<section id="faq">
+				<h2>FAQ</h2>
+				<p></p>
+
+				<form>
+					<div class="row uniform 80%">
+						<div class="expand" style="cursor:pointer;">What is yoursite.com?&nbsp;&nbsp; (<span class="expandDetails plus"></span>)</div>
+						<div class="collapse" style="display:none;">As your partner, we value your time and we want your business to be successful. We want you to focus on the growth of your business, while we take care of all the yoursite services 
+
+required by the government, banks, investors and clients.
+
+As a true partner we will be working with you, not only during tax season but throughout the 
+
+year. 
+
+We partnered with Professional Accountants and Booksupers to ensure we meet your service 
+
+requirements.</div>
+						
+						<div class="expand" style="cursor:pointer;">Why should I use yoursite.com?&nbsp;&nbsp; (<span class="expandDetails plus"></span>)</div>
+						<div class="collapse" style="display:none;">yoursite.com is simple, fast and efficient and uses the latest technology to deliver
+
+your business financial information.
+
+We streamlined the yoursite process to ensure that we can provide you a fast and efficient 
+
+service.
+
+We have utilized the latest technology to deliver interactive user interface that will work on 
+
+different platforms.</div>
+						
+						<div class="expand" style="cursor:pointer;">How does it work?&nbsp;&nbsp; (<span class="expandDetails plus"></span>)</div>
+						<div class="collapse" style="display:none;">It is very simple. It is a 3 step process. Sign-Up, Upload and View Reports.
+
+After you sign-up, we will assign a professional booksuper to manage your books. They will 
+
+provide you instructions on how you can upload your receipts/invoice to our website or send 
+
+them to our office.
+
+We will then process the receipts/invoices so you can view the Financial Reports of the 
+
+company.</div>
+
+						<div class="expand" style="cursor:pointer;">How is this different from other online yoursite services?&nbsp;&nbsp; (<span class="expandDetails plus"></span>)</div>
+						<div class="collapse" style="display:none;">We have created an innovative yoursite solution that combines the traditional accounting 
+
+services and the latest technology to deliver a product that work for your business.
+
+We have looked at the problem on a different angle. The other online yoursite services only 
+
+provide you a tool. A tool for you to manage and learn by yourself.
+
+We have partnered with Certified Professional Accountants to incorporate their knowledge and 
+
+the latest technology to create a product that will help your business.</div>
+
+<div class="expand" style="cursor:pointer;">How much does it cost? &nbsp;&nbsp; (<span class="expandDetails plus"></span>)</div>
+						<div class="collapse" style="display:none;">We can create a custom plan that meet your business needs. Just call us.
+
+We know that every business is different. Depending on your size and lifecycle, your needs 
+
+maybe more complex than other business. As you partner, we would like to discuss and 
+
+understand your needs, so we can offer you Custom Plan or a Standard Plans.
+
+Your success is our success.</div>
+
+					</div>
+				</form>
+</section>
+			</section> -->
+			
+		<!-- About Us -->
+		<section id="aboutus" class="box special">
+					<header class="major">
+					    <h2>About Us</h2>
+					    <br/>
+						<h3>We believe in <span style="color:blue;text-decoration:underline">Innovation</span></h3>
+						<p>yoursite.com brings innovation in an existing industry that is a necessity to the life of any business, enterprise or commerce</p>
+						
+						<br/><br/><br/><br/><br/>
+						<h3>We believe in <span style="color:red ;text-decoration:underline">Technology</span></h3>
+						<p>yoursite.com is built using the latest technologies in the market and will continue to leverage new technologies in developing products </p>
+						
+						<br/><br/><br/><br/><br/>
+						<h3>We believe in <span style="color:green;text-decoration:underline">Simplicity</span></h3>
+						<p>yoursite.com embrace the idea and beauty of simplicity to deliver complex products and services to our partners</p>
+					</header>
+		</section>
+
+        <!-- Contact Us -->
+			<section id="contactus" class="box special">
+					<header class="major">
+					    <h2>Contact Us</h2>
+						<h3>If you are interested on our products and services</h3>
+						<a href="packages" class="button special">Request Invite</a>
+						<br/><br/><br/>
+						<h3>If you have any questions or inquiry</h3>
+						
+						<p>E-mail Address:     Client_Services@@yoursite.com​</p><br/>
+						<p>Telephone Number:     +1-416-754-5500​</p><br/>
+						<p>Corporate Address:     yoursite.com​
+Unit 204  ​
+5109 Steeles Ave. West,​
+Toronto, Ontario, M9L 2Y8 Canada​</p><br/>
+					</header>
+			</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li><a href="terms-and-conditions" class="button special">Terms and Conditions</a></li>
+					<li><a href="#aboutus" class="button special">yoursite Inc.</a></li>
+				</ul>
+			</footer>
+	</body>
+</html>

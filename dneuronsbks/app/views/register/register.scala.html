@@ -1,0 +1,129 @@
+@(packages : List[String])
+<!DOCTYPE html>
+<html ng-app="yoursite">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>yoursite | Register</title>
+    <link href="@routes.Assets.at("css/bootstrap.min.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("dashboard/font-awesome/css/font-awesome.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.at("css/das/animate.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/das/style.css")" rel="stylesheet">
+</head>
+
+<body ng-controller="signupController">
+
+
+
+	<section id="banner">
+    <div class="animated fadeInDown" >
+    	<div class="row">
+    	 <div class="col-md-4">
+        </div>
+             <div class="col-md-4">
+                 <h2><img style="padding-bottom:1cm;height:100px" src="@routes.Assets.at("svg/icon-box.svg")" alt="yoursite.com"></h2>
+                <h3><font size="5">Welcome to yoursite<font color="#10C578" >Suite</font>.com</font></font></h3>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+        <div class="col-md-4">
+        </div>
+            <div class="col-md-4">
+                <div class="ibox-content">
+		            <form class="m-t" role="form" method="post" action="signup">
+		                <div class="form-group">
+		                    <input autocomplete="off" placeholder="Name" style="color:black" id="username" name="username" ng-model="formData.username" type="text" 
+											 class="form-control" ng-model-options="{ debounce: 500 }" validate-username ng-required="true"  ng-minlength="5" />
+											 
+		                </div>
+		                 <label class="error" ng-if="formData.alreadyExist">*user name exists already</label>
+		                <div class="form-group">
+		                    <input type="email"  name="email" style="color:black" class="form-control" placeholder="Email" required="" >
+		                </div>
+		                <div class="form-group">
+		                    <input type="password" name="password" style="color:black" class="form-control" placeholder="Password" required="">
+		                </div>
+		                <div class="form-group">
+		                    <input type="text" name="phno" style="color:black" class="form-control" placeholder="Phonenumber" required="" >
+		                </div>
+		              <div class="form-group">
+											<label>Package</label> 
+												<select class="form-control m-b" style="color:black" id="packageName" name="packageName" type="text">
+												 @for(index <- 0 until packages.size){
+												 <option value="@packages(index)">@packages(index)</option>
+												 }
+										</select>
+										</div>
+		                <div class="form-group">
+		                        <div class="checkbox" style="color:black"><label> <input type="checkbox" style="color:black" name="policy"><i></i>I agree with the <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a> </label></div>
+		                </div>
+		                <button type="submit" ng-disabled="formData.alreadyExist"  class="btn btn-primary block full-width m-b">Send me Invite</button>
+		
+		                <p class="text-muted text-center"><small>Already have an account?</small></p>
+		                <a class="btn btn-sm btn-black btn-block" style="font-size: 140%;" href="/login">Login</a>
+		            </form>
+                </div>
+            </div>
+        </div>
+       
+        <div class="row">
+         <div class="col-md-4">
+        </div>
+            <div class="col-md-4">
+                yoursite Inc. &copy; 
+            </div>
+        </div>
+    </div>
+    </section>
+    
+<!-- jQuery and Bootstrap -->
+<script src="@routes.Assets.at("dashboard/js/jquery/jquery-2.1.1.min.js")"></script>
+<script src="@routes.Assets.at("dashboard/js/plugins/jquery-ui/jquery-ui.js")"></script>
+<script src="@routes.Assets.at("dashboard/js/bootstrap/bootstrap.min.js")"></script>
+
+<!-- MetsiMenu -->
+<script src="@routes.Assets.at("dashboard/js/plugins/metisMenu/jquery.metisMenu.js")"></script>
+
+<!-- SlimScroll -->
+<script src="@routes.Assets.at("dashboard/js/plugins/slimscroll/jquery.slimscroll.min.js")"></script>
+
+<!-- Peace JS -->
+<script src="@routes.Assets.at("dashboard/js/plugins/pace/pace.min.js")"></script>
+
+
+
+<!-- Custom and plugin javascript -->
+<script src="@routes.Assets.at("dashboard/js/yoursite.js")"></script>
+
+<!-- Main Angular scripts-->
+<script src="@routes.Assets.at("dashboard/js/angular/angular.min.js")"></script>
+<script src="@routes.Assets.at("dashboard/js/plugins/oclazyload/dist/ocLazyLoad.min.js")"></script>
+<script src="@routes.Assets.at("dashboard/js/angular-translate/angular-translate.min.js")"></script>
+<script src="@routes.Assets.at("dashboard/js/ui-router/angular-ui-router.min.js")"></script>
+<script src="@routes.Assets.at("dashboard/js/angular/angular-sanitize.min.js")"></script>
+<script src="@routes.Assets.at("dashboard/js/bootstrap/ui-bootstrap-tpls-0.12.0.min.js")"></script>
+
+<!--
+ You need to include this script on any page that has a Google Map.
+ When using Google Maps on your own site you MUST signup for your own API key at:
+ https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+ After your sign up replace the key in the URL below..
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQTpXj82d8UpCi97wzo_nKXL7nYrd4G70"></script>
+-->
+
+<!-- Anglar App Script -->
+<script src="@routes.Assets.at("dashboard/js/app.js")"></script>
+<script src="@routes.Assets.at("dashboard/js/factories.js")"></script>
+<script src="@routes.Assets.at("dashboard/js/config.js")"></script>
+<script src="@routes.Assets.at("dashboard/js/translations.js")"></script>
+<script src="@routes.Assets.at("dashboard/js/directives.js")"></script>
+<script src="@routes.Assets.at("dashboard/js/controllers.js")"></script>
+
+
+</body>
+</html>

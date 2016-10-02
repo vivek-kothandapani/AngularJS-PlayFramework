@@ -1,0 +1,163 @@
+@(message: String)
+    <input type="hidden" name="submitted" value="false">
+<div id="shipping-information">
+	<div class="fields">
+		<h5>{{ 'SHIPPING_TITLE' | translate }}</h5>
+		<!-- country -->
+		<div class="form-group">
+			<label for="shipping-country">{{ 'COUNTRY' | translate }} <span
+				class="required">*</span></label> <select id="shipping-country"
+				ng-model="cart.shipping.country" name="ship_country"
+				autocomplete="on" required>
+				<option value="">- {{ 'CHOOSE_COUNTRY' | translate }} -</option>
+				<option value="USA">United States</option>
+				<option value="GBR">United Kingdom</option>
+				<option value="CAN">Canada</option>
+			</select>
+			<div class="validator"></div>
+			<span
+				ng-show="checkout.submitted == true && checkout.ship_country.$invalid"
+				class="error-note shipping-country-error-note">{{
+				'ERROR_COUNTRY' | translate }}</span>
+		</div>
+		<!-- full name -->
+		<div class="form-group">
+			<label for="shipping-full-name">{{ 'FULL_NAME' | translate }}
+				<span class="required">*</span>
+			</label> <input id="shipping-full-name" ng-model="cart.shipping.name"
+				type="text" name="ship_name" autocomplete="on" required />
+			<div class="validator"></div>
+			<span
+				ng-show="checkout.submitted == true && checkout.ship_name.$invalid"
+				class="error-note shipping-name-error-note">{{ 'ERROR_NAME' |
+				translate }}</span>
+		</div>
+		<!-- address 1 -->
+		<div class="form-group">
+			<label for="shipping-address-1">{{ 'ADDRESS_1' | translate }}
+				<span class="required">*</span>
+			</label> <input id="shipping-address-1" type="text"
+				ng-model="cart.shipping.address1" name="ship_street_address"
+				autocomplete="on" required />
+			<div class="validator"></div>
+			<span
+				ng-show="checkout.submitted == true && checkout.ship_street_address.$invalid"
+				class="error-note shipping-address-1-error-note">{{
+				'ERROR_ADDRESS_1' | translate }}</span>
+		</div>
+		<!-- address 2 -->
+		<div class="form-group">
+			<label for="shipping-address-2">{{ 'ADDRESS_2' | translate }}</label>
+			<input id="shipping-address-2" type="text"
+				ng-model="cart.shipping.address2" name="ship_street_address2"
+				autocomplete="on" />
+			<div class="validator"></div>
+			<span
+				ng-show="checkout.submitted == true && checkout.ship_street_address2.$invalid"
+				class="error-note shipping-address-2-error-note">{{
+				'ERROR_ADDRESS_2' | translate }}</span>
+		</div>
+		<!-- city -->
+		<div class="form-group city">
+			<label for="shipping-city">{{ 'CITY' | translate }} <span
+				class="required">*</span></label> <input id="shipping-city" type="text"
+				ng-model="cart.shipping.city" name="ship_city" autocomplete="on"
+				required />
+			<div class="validator"></div>
+			<span
+				ng-show="checkout.submitted == true && checkout.ship_city.$invalid"
+				class="error-note shipping-city-error-note">{{ 'ERROR_CITY' |
+				translate }}</span>
+		</div>
+		<!-- state -->
+		<div class="form-group state">
+			<label for="shipping-state">{{ 'STATE' | translate }}</label> <input
+				id="shipping-state" type="text" name="ship_state"
+				ng-model="cart.shipping.state" autocomplete="on" />
+			<div class="validator"></div>
+			<span
+				ng-show="checkout.submitted == true && checkout.ship_state.$invalid"
+				class="error-note shipping-state-error-note">{{ 'ERROR_STATE'
+				| translate }}</span>
+		</div>
+		<!-- zip/postal -->
+		<div class="form-group zip">
+			<label for="shipping-postal">{{ 'POSTAL' | translate }}</label> <input
+				id="shipping-postal" type="text" name="ship_zip"
+				ng-model="cart.shipping.zip" autocomplete="on" />
+			<div class="validator"></div>
+			<span
+				ng-show="checkout.submitted == true && checkout.ship_zip.$invalid"
+				class="error-note shipping-postal-error-note">{{
+				'ERROR_POSTAL' | translate }}</span>
+		</div>
+		<!-- phone -->
+		<div class="form-group phone">
+			<label for="phone">{{ 'PHONE' | translate }} <span
+				class="required">*</span></label> <input id="phone" type="tel" name="phone"
+				ng-model="cart.shipping.phone" autocomplete="on" required />
+			<div class="validator"></div>
+			<span ng-show="checkout.submitted == true && checkout.phone.$invalid"
+				class="error-note phone-error-note">{{ 'ERROR_PHONE' |
+				translate }}</span>
+		</div>
+		<!-- phone extension -->
+		<div class="form-group extension">
+			<label for="phone">Ext</label> <input id="phone-extension" type="tel"
+				name="phone_extension" ng-model="cart.shipping.phoneExt"
+				autocomplete="on">
+			<div class="validator"></div>
+			<span
+				ng-show="checkout.submitted == true && checkout.phone_extension.$invalid"
+				class="error-note phone-extension-error-note">Please include
+				only numbers and optional spaces and dashes for your extension.
+				Extension can only be 16 digits long.</span>
+		</div>
+		<div class="form-group">
+			<label for="email">{{ 'EMAIL' | translate }} <span
+				class="required">*</span></label> <input id="email" type="text" name="email"
+				ng-model="cart.shipping.email" autocomplete="on" required />
+			<div class="validator"></div>
+			<span ng-show="checkout.submitted == true && checkout.email.$invalid"
+				class="error-note email-error-note">{{ 'ERROR_EMAIL' |
+				translate }}</span>
+		</div>
+		<div class="form-group">
+			<label for="email">Username<span
+				class="required">*</span></label> <input id="username" type="text" name="email"
+				ng-model="cart.shipping.email" autocomplete="on" required />
+			<div class="validator"></div>
+			<span ng-show="checkout.submitted == true && checkout.email.$invalid"
+				class="error-note email-error-note">{{ 'ERROR_EMAIL' |
+				translate }}</span>
+		</div>
+		<div class="form-group">
+			<label for="email">Password<span
+				class="required">*</span></label> <input id="password" type="password" name="email"
+				ng-model="cart.shipping.email" autocomplete="on" required />
+			<div class="validator"></div>
+			<span ng-show="checkout.submitted == true && checkout.email.$invalid"
+				class="error-note email-error-note">{{ 'ERROR_EMAIL' |
+				translate }}</span>
+		</div>
+		<div class="form-group">
+			<label for="email">Confirm Password<span
+				class="required">*</span></label> <input id="confpassword" type="password" name="email"
+				ng-model="cart.shipping.email" autocomplete="on" required />
+			<div class="validator"></div>
+			<span ng-show="checkout.submitted == true && checkout.email.$invalid"
+				class="error-note email-error-note">{{ 'ERROR_EMAIL' |
+				translate }}</span>
+		</div>
+	</div>
+	<div ng-if="checkout.$invalid">
+		<button class="btn blue" ng-click="checkout.submitted=true">{{
+			'CONTINUE' | translate }}</button>
+	</div>
+	<div ng-if="checkout.$valid">
+		<button class="btn blue"
+			ng-click="cart.setStep(cart.nextStep(3)); checkout.submitted=false;">{{
+			'CONTINUE' | translate }}</button>
+	</div>
+	<div class="clear"></div>
+</div>

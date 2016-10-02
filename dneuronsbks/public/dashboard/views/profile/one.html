@@ -1,0 +1,59 @@
+
+<fieldset>
+    <h2>Company Information</h2>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Company Name *</label>
+                <input id="companyName" ng-model="formData.companyName" name="companyName" type="text" class="form-control required" ng-required="true"  ng-minlength="1">
+            </div>
+            <div class="form-group">
+                <label>Company Address</label>
+                <input id="companyAddress1" ng-model="formData.companyAddress1"   name="companyAddress1" type="text" class="form-control">
+                <input id="companyAddress2" ng-model="formData.companyAddress2"   name="companyAddress2" type="text" class="form-control">
+            </div>
+             
+       </div>
+       <div class="col-lg-6">
+       <div class="form-group">
+                <label>E-mail</label>
+                <input id="email" name="email" ng-model="formData.email"  ng-required="true" type="text" class="form-control">
+           	 </div>
+       </div>
+    </div>
+    <div class="row">
+     	 <div class="col-lg-6">
+            <div class="form-group">
+                <label>City</label>
+                <input id="city" ng-model="formData.city"   name="city" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Postal Code</label>
+                <input id="postaCode" name="postaCode"   ng-model="formData.postaCode" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input id="phoneNumber" name="phoneNumber"  data-mask="(999) 999-9999" ng-model="formData.phoneNumber" ng-required="true" type="text" class="form-control">
+	        </div>
+         </div>
+         <div class="col-lg-6">
+         	<div class="form-group">
+			<label>Country</label>
+                <select class="form-control m-b" id="country" ng-model="formData.country"
+				name="country" ng-change="changeCountry()" type="text" ng-options="country.code as country.name for country in countries" >
+				</select> 
+	         </div>
+         <div class="form-group">
+                <label>Province</label>
+                <select class="form-control m-b" id="province" ng-model="formData.province"
+					ng-options="state.code as state.name for state in states" name="province" type="text">
+				</select>
+           	 </div>
+           	 </div>
+				
+	
+         </div>
+    </div>
+    <a  ui-sref="#" ng-click="processForm()" class="btn btn-primary">Save & Next</a>
+</fieldset>

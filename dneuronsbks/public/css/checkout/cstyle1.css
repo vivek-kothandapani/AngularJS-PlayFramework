@@ -1,0 +1,659 @@
+/*
+////////////////////////////////////////////////////////////////////////// 
+//
+// 01. FONTS
+//
+////////////////////////////////////////////////////////////////////////// 
+*/
+
+/*---------THIN-----------*/
+
+@font-face {
+     font-family: 'Proxima Nova';
+     src: url('../upload/fonts/ProximaNova-Thin-webfont.eot');
+     src: url('../upload/fonts/ProximaNova-Thin-webfont.eot') format('embedded-opentype'),
+     url('../upload/fonts/ProximaNova-Thin-webfont.woff') format('woff'),
+     url('../upload/fonts/ProximaNova-Thin-webfont.ttf') format('truetype'),
+     url('../upload/fonts/ProximaNova-Thin-webfont.svg') format('svg');
+     font-weight: 200;
+     font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+     @font-face {
+          font-family: 'Proxima Nova';
+          src: url('../upload/fonts/ProximaNova-Thin-webfont.woff') format('woff');
+          font-weight: 200;
+          font-style: normal;
+     }
+
+}
+
+/*---------THIN ITALIC-----------*/
+
+@font-face {
+     font-family: 'Proxima Nova';
+     src: url('../upload/fonts/ProximaNova-ThinIt-webfont.eot');
+     src: url('../upload/fonts/ProximaNova-ThinIt-webfont.eot') format('embedded-opentype'),
+     url('../upload/fonts/ProximaNova-ThinIt-webfont.woff') format('woff'),
+     url('../upload/fonts/ProximaNova-ThinIt-webfont.ttf') format('truetype'),
+     url('../upload/fonts/ProximaNova-ThinIt-webfont.svg') format('svg');
+     font-weight: 200;
+     font-style: italic;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+     @font-face {
+          font-family: 'Proxima Nova';
+          src: url('../upload/fonts/ProximaNova-ThinIt-webfont.woff') format('woff');
+          font-weight: 200;
+          font-style: italic;
+     }
+
+}
+
+/*---------LIGHT-----------*/
+
+@font-face {
+     font-family: 'Proxima Nova';
+     src: url('../upload/fonts/ProximaNova-Light-webfont.eot');
+     src: url('../upload/fonts/ProximaNova-Light-webfont.eot') format('embedded-opentype'),
+     url('../upload/fonts/ProximaNova-Light-webfont.woff') format('woff'),
+     url('../upload/fonts/ProximaNova-Light-webfont.ttf') format('truetype'),
+     url('../upload/fonts/ProximaNova-Light-webfont.svg') format('svg');
+     font-weight: 300;
+     font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+     @font-face {
+          font-family: 'Proxima Nova';
+          src: url('../upload/fonts/ProximaNova-Light-webfont.woff') format('woff');
+          font-weight: 300;
+          font-style: normal;
+     }
+
+}
+
+/*---------LIGHT ITALIC-----------*/
+
+@font-face {
+     font-family: 'Proxima Nova';
+     src: url('../upload/fonts/ProximaNova-LightIt-webfont.eot');
+     src: url('../upload/fonts/ProximaNova-LightIt-webfont.eot') format('embedded-opentype'),
+     url('../upload/fonts/ProximaNova-LightIt-webfont.woff') format('woff'),
+     url('../upload/fonts/ProximaNova-LightIt-webfont.ttf') format('truetype'),
+     url('../upload/fonts/ProximaNova-LightIt-webfont.svg') format('svg');
+     font-weight: 300;
+     font-style: italic;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+     @font-face {
+          font-family: 'Proxima Nova';
+          src: url('../upload/fonts/ProximaNova-LightIt-webfont.woff') format('woff');
+          font-weight: 300;
+          font-style: italic;
+     }
+
+}
+
+/*---------REGULAR-----------*/
+
+@font-face {
+     font-family: 'Proxima Nova';
+     src: url('../upload/fonts/ProximaNova-Reg-webfont.eot');
+     src: url('../upload/fonts/ProximaNova-Reg-webfont.eot') format('embedded-opentype'),
+     url('../upload/fonts/ProximaNova-Reg-webfont.woff') format('woff'),
+     url('../upload/fonts/ProximaNova-Reg-webfont.ttf') format('truetype'),
+     url('../upload/fonts/ProximaNova-Reg-webfont.svg') format('svg');
+     font-weight: 500;
+     font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+     @font-face {
+          font-family: 'Proxima Nova';
+          src: url('../upload/fonts/ProximaNova-Reg-webfont.woff') format('woff');
+          font-weight: 500;
+          font-style: normal;
+     }
+
+}
+
+/*---------REGULAR ITALIC-----------*/
+
+@font-face {
+     font-family: 'Proxima Nova';
+     src: url('../upload/fonts/ProximaNova-RegIt-webfont.eot');
+     src: url('../upload/fonts/ProximaNova-RegIt-webfont.eot') format('embedded-opentype'),
+     url('../upload/fonts/ProximaNova-RegIt-webfont.woff') format('woff'),
+     url('../upload/fonts/ProximaNova-RegIt-webfont.ttf') format('truetype'),
+     url('../upload/fonts/ProximaNova-RegIt-webfont.svg') format('svg');
+     font-weight: 500;
+     font-style: italic;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+     @font-face {
+          font-family: 'Proxima Nova';
+          src: url('../upload/fonts/ProximaNova-RegIt-webfont.woff') format('woff');
+          font-weight: 500;
+          font-style: italic;
+     }
+
+}
+
+/*---------BOLD-----------*/
+
+@font-face {
+     font-family: 'Proxima Nova';
+     src: url('../upload/fonts/ProximaNova-Bold-webfont.eot');
+     src: url('../upload/fonts/ProximaNova-Bold-webfont.eot') format('embedded-opentype'),
+     url('../upload/fonts/ProximaNova-Bold-webfont.woff') format('woff'),
+     url('../upload/fonts/ProximaNova-Bold-webfont.ttf') format('truetype'),
+     url('../upload/fonts/ProximaNova-Bold-webfont.svg') format('svg');
+     font-weight: 700;
+     font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+     @font-face {
+          font-family: 'Proxima Nova';
+          src: url('../upload/fonts/ProximaNova-Bold-webfont.woff') format('woff');
+          font-weight: 700;
+          font-style: normal;
+     }
+
+}
+
+/*---------BOLD ITALIC-----------*/
+
+@font-face {
+     font-family: 'Proxima Nova';
+     src: url('../upload/fonts/ProximaNova-BoldIt-webfont.eot');
+     src: url('../upload/fonts/ProximaNova-BoldIt-webfont.eot') format('embedded-opentype'),
+     url('../upload/fonts/ProximaNova-BoldIt-webfont.woff') format('woff'),
+     url('../upload/fonts/ProximaNova-BoldIt-webfont.ttf') format('truetype'),
+     url('../upload/fonts/ProximaNova-BoldIt-webfont.svg') format('svg');
+     font-weight: 700;
+     font-style: italic;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+     @font-face {
+          font-family: 'Proxima Nova';
+          src: url('../upload/fonts/ProximaNova-BoldIt-webfont.woff') format('woff');
+          font-weight: 700;
+          font-style: italic;
+     }
+
+}
+
+*---------BLACK-----------*/
+
+@font-face {
+     font-family: 'Proxima Nova';
+     src: url('../upload/fonts/ProximaNova-Black-webfont.eot');
+     src: url('../upload/fonts/ProximaNova-Black-webfont.eot') format('embedded-opentype'),
+     url('../upload/fonts/ProximaNova-Black-webfont.woff') format('woff'),
+     url('../upload/fonts/ProximaNova-Black-webfont.ttf') format('truetype'),
+     url('../upload/fonts/ProximaNova-Black-webfont.svg') format('svg');
+     font-weight: 800;
+     font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+     @font-face {
+          font-family: 'Proxima Nova';
+          src: url('../upload/fonts/ProximaNova-Black-webfont.woff') format('woff');
+          font-weight: 800;
+          font-style: normal;
+     }
+
+}
+
+/*---------BLACK ITALIC-----------*/
+
+@font-face {
+     font-family: 'Proxima Nova';
+     src: url('../upload/fonts/ProximaNova-BlackIt-webfont.eot');
+     src: url('../upload/fonts/ProximaNova-BlackIt-webfont.eot') format('embedded-opentype'),
+     url('../upload/fonts/ProximaNova-BlackIt-webfont.woff') format('woff'),
+     url('../upload/fonts/ProximaNova-BlackIt-webfont.ttf') format('truetype'),
+     url('../upload/fonts/ProximaNova-BlackIt-webfont.svg') format('svg');
+     font-weight: 800;
+     font-style: italic;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+     @font-face {
+          font-family: 'Proxima Nova';
+          src: url('../upload/fonts/ProximaNova-BlackIt-webfont.woff') format('woff');
+          font-weight: 800;
+          font-style: italic;
+     }
+
+}
+
+/*
+////////////////////////////////////////////////////////////////////////// 
+//
+// 02. HEADINGS
+//
+////////////////////////////////////////////////////////////////////////// 
+*/
+
+h1 {
+     font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+     font-weight: 200;
+     font-size: 66px;
+     line-height: 1.0em;
+     letter-spacing: -3px;
+     margin-bottom: 25px;
+}
+
+h2 {
+     font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+     font-weight: 200;
+     font-size: 40px;
+     line-height: 1.1em;
+     letter-spacing: -1px;
+     margin-bottom: 20px;
+}
+
+h3 {
+     font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+     font-weight: 300;
+     font-size: 32px;
+     line-height: 1.2em;
+     letter-spacing: -1px;
+     margin-bottom: 20px;
+}
+
+h4 {
+     font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+     font-weight: 300;
+     font-size: 24px;
+     line-height: 1.2em;
+     letter-spacing: 0px;
+     margin-bottom: 15px;
+}
+
+h5 {
+     font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+     font-weight: 700;
+     font-size: 24px;
+     line-height: 1.2em;
+     margin-bottom: 10px;
+}
+
+h6 {
+     font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+     font-weight: 300;
+     font-size: 24px;
+     line-height: 1.2em;
+     margin-bottom: 10px;
+}
+
+
+
+/* MOBILE
+////////////////////////////////////////////////////////////////////////// 
+*/
+
+@media only screen and (max-width : 900px),
+only screen and (max-device-width : 900px) {
+
+      h1 {
+         font-size: 44px;
+         letter-spacing: -2px;
+      }
+      
+      h2 {
+         font-size: 32px;
+      }
+      
+      h3 {
+         font-size: 26px;
+         margin-bottom: 15px;
+      }
+      
+      h4 {
+         font-size: 21px;
+         margin-bottom: 15px;
+      }
+      
+      h5, h6 {
+         font-size: 21px;
+      }
+     
+}
+
+@media only screen and (max-width : 500px),
+only screen and (max-device-width : 500px) {
+
+      h1 {
+         font-size: 36px;
+         letter-spacing: -2px;
+      }
+      
+      h2 {
+         font-size: 30px;
+      }
+      
+      h3 {
+         font-size: 24px;
+         margin-bottom: 15px;
+      }
+      
+      h4 {
+         font-size: 21px;
+         margin-bottom: 15px;
+      }
+      
+      h5, h6 {
+         font-size: 21px;
+      }
+     
+}
+
+
+
+/*
+////////////////////////////////////////////////////////////////////////// 
+//
+// 03. COPY AND LINKS
+//
+////////////////////////////////////////////////////////////////////////// 
+*/
+
+p, span {
+     font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+     font-size: 18px;
+     font-weight: 300;
+     line-height: 1.4em;
+     letter-spacing: 0;
+}
+
+strong {
+     font-weight: 700;
+}
+
+em, i {
+     font-style: italic;
+}
+
+sup, sub {
+   font-size: 60%;
+   line-height: 1em;
+}
+
+pre {
+   line-height: 1.35em;
+}
+
+pre.prettyprint {
+   margin-bottom: 20px;
+   padding: 25px !important;
+   background: #FFF;
+   border: 1px solid #CCC;
+   overflow-y: auto;
+}
+
+pre.prettyprint span {
+   font-family: monospace;
+   white-space: pre;
+   margin: 1em 0px;
+   font-size: 12px;
+}
+
+code {
+   font-family: monospace;
+}
+
+blockquote {
+     background: #F9F9F9;
+     border: 1px solid #E6E6E6;
+     margin-bottom: 25px;
+     padding: 30px 30px 30px 30px;
+}
+
+blockquote p, blockquote span, blockquote ul {
+     margin-bottom: 0 !important;
+}
+
+#testimonial p {
+     margin: 0 100px 40px;
+     text-align: center;
+     font-family: "Minion Pro", Minion, Times New Roman, Cambria, Georgia, sans-serif;
+     font-size: 32px;
+     font-weight: normal;
+     font-style: italic;
+     line-height: 1.2em;
+}
+
+#testimonial a {
+     margin-top: 30px;
+     font-family: "Proxima Nova", Arial, Helvetica, sans-serif;
+     font-size: 18px;
+     font-weight: 500;
+     line-height: 1.4em;
+}
+
+#testimonial h1 {
+     color: #41c3db;
+     font-family: "Minion Pro", Minion, Times New Roman, Cambria, Georgia, sans-serif;
+     font-size: 180px;
+     font-weight: bold;
+     font-style: italic;
+     line-height: 1em;
+}
+
+#testimonial h1:first-child {
+     text-align: left;
+     margin-bottom: -130px;
+     margin-left: -15px;
+}
+
+#testimonial h1:last-child {
+     text-align: right;
+     margin-top: -100px;
+     margin-bottom: -100px;
+}
+
+.monospace {
+     font-family: "Courier", monospace;
+     font-weight: 500;
+}
+
+.fineprint {
+     font-size: 10px;
+     line-height: 1.2em;
+}
+
+.extra-small {
+     font-size: 14px;
+     font-weight: 500;
+}
+
+.small {
+     font-size: 16px;
+     font-weight: 500;
+}
+
+.large {
+     font-size: 21px;
+     line-height: 1.3em;
+     font-weight: 300;
+}
+
+.extra-large {
+     font-size: 24px;
+     line-height: 1.3em;
+     font-weight: 300;
+}
+
+.center-align {
+     text-align: center;
+}
+
+a {
+     color: #009AC7;
+     text-decoration: none;
+     cursor: pointer;
+     cursor: hand;
+}
+
+a:hover {
+     text-decoration: underline;
+     cursor: pointer;
+     cursor: hand;
+}
+
+a:visited {
+     color: #00728F;
+     text-decoration: none;
+     cursor: pointer;
+     cursor: hand;
+}
+
+/*---------LISTS-----------*/
+
+ol {
+     counter-reset: list;
+}
+
+ol.upper-alpha li, ol.lower-alpha, ol.upper-roman li, ol.lower-roman li, ul.disc li, ul.circle li, ul.none li {
+     margin-bottom: 6px;
+}
+
+ol.upper-alpha li {
+     list-style: upper-alpha;
+}
+
+ol.lower-alpha li {
+     list-style: lower-alpha;
+}
+
+ol.upper-roman li {
+     list-style: upper-roman;
+}
+
+ol.lower-roman li {
+     list-style: lower-roman;
+}
+
+ol.decimal li {
+     list-style: decimal;
+}
+
+ol.parentheses li:before {
+     content: "(" counter(list, lower-alpha) ") ";
+     counter-increment: list;
+     padding-right: 10px;
+}
+
+ul.disc li {
+     list-style: disc !important;
+}
+
+ul.circle li {
+     list-style: circle !important;
+}
+
+ul.none li {
+     list-style: none !important;
+}
+
+@media only screen and (max-width : 900px),
+only screen and (max-device-width : 900px) {
+
+     #testimonial p {
+     margin: 0 0 40px 0;
+     text-align: left;
+     font-size: 32px;
+     }
+     
+     #testimonial a {
+     margin-top: 30px;
+     font-size: 18px;
+     }
+     
+     #testimonial h1 {
+     font-size: 180px;
+     line-height: 1em;
+     }
+     
+     #testimonial h1:first-child {
+        text-align: left;
+        margin-bottom: -90px;
+     }
+     
+     #testimonial h1:last-child {
+        text-align: right;
+        margin-top: -100px;
+     }
+
+     .extra-small {
+        font-size: 12px;
+     }
+     
+     .small {
+        font-size: 14px;
+     }
+
+     p, span {
+        font-size: 16px;
+     }
+     
+     .large {
+        font-size: 18px;
+     }
+     
+     .extra-large {
+        font-size: 21px;
+     }
+
+}
+
+@media only screen and (max-width : 600px),
+only screen and (max-device-width : 600px) {
+
+     .extra-small {
+     font-size: 12px;
+     }
+     
+     .small {
+     font-size: 14px;
+     }
+     
+     p, span {
+     font-size: 16px;
+     }
+     
+     .large {
+     font-size: 16px;
+     line-height: 1.5em;
+     }
+     
+     .extra-large {
+     font-size: 18px;
+     line-height: 1.5em;
+     }
+     
+     blockquote {
+     padding: 20px 20px 10px 20px;
+     }
+
+}

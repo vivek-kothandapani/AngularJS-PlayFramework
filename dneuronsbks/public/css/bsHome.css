@@ -1,0 +1,41 @@
+h2{
+    margin: 0;     
+    color: #666;
+    padding-top: 90px;
+    font-size: 52px;
+    font-family: "trebuchet ms", sans-serif;    
+}
+.item{
+    background: #FFF;    
+    /*text-align: center;
+    height: 300px !important;*/
+}
+
+.carousel{
+    margin-top: 0px;
+}
+
+.carousel-inner{
+	width:100%;
+}
+
+.bs-example{
+	margin: 20px;
+}
+
+.carouselImg{
+	width: 725px;
+	height: 480px;
+}
+
+.slideContent{
+	padding-left: 300px;
+}
+
+.slideContent h2{
+	color: #24A84E;
+}
+
+.slideContent p{
+	color: #222;
+}

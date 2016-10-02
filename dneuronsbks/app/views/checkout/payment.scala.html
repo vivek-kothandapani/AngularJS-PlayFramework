@@ -1,0 +1,49 @@
+@(message: String)
+	<input type="hidden" name="submitted" value="false">
+	<div ng-init="settings.bindPayPal()"></div>
+	<div id="payment">
+	    <img class="lock" src="/upload/images/icon_lock_grey.png" alt="Secure Lock" />
+	    <h5>{{ 'PAYMENT_TITLE' | translate }}</h5>
+	    <div class="fields">
+	        <!-- country -->
+	        <div class="card-container active">
+	            <!-- card number 
+	            <div class="paypal"><span>{{ 'PAYPAL' | translate }}</span><a href="" id="paypal-btn"><img src="/upload/images/logo_paypal_small.png" alt="PayPal Logo" /></a></div>
+	            -->
+	            <div class="form-group">
+	                <label for="ccNo">{{ 'CREDIT_CARD' | translate }} <span class="required">*</span></label>
+	                <input id="ccNo" type="text" value="4242424242424242" readonly>
+	                <div class="validator"></div>
+	                <span ng-show="checkout.submitted == true && checkout.$invalid" class="error-note card-number-error-note">{{ 'ERROR_CARD' | translate }}</span>
+	            </div>
+	            <!-- exp date -->
+	            <div class="form-group" id="exp-date">
+	                <label for="expMonth">{{ 'EXPIRATION_DATE' | translate }} <span class="required">*</span></label>
+	                <select id="expMonth" readonly>
+	                    <option value="12">12</option>
+	                </select>
+	                <span class="twenty">20</span>
+	                <select id="expYear" readonly>
+	                    <option value="2018">18</option>
+	                </select>
+	                <div class="clear"></div>
+	                <div class="validator"></div>
+	                <span ng-show="checkout.submitted == true && checkout.$invalid" class="error-note exp-date-error-note">{{ 'ERROR_EXP' | translate }}</span>
+	            </div>
+	            <div class="clear"></div>
+	            <!-- cvv -->
+	            <div class="form-group" id="cvv-group">
+	                <label for="cvv">{{ 'CVV' | translate }} <span class="required">*</span></label>
+	                <input id="cvv" type="text" value="123" readonly>
+	                <div class="validator"></div>
+	                <span ng-show="checkout.submitted == true && checkout.$invalid" class="error-note cvv-error-note">{{ 'ERROR_CVV' | translate }}</span>
+	            </div>
+	            <!--/card-container-->
+	            <div class="clear"></div>
+	        </div>
+	    </div>
+	    <div ng-if="checkout.$valid">
+	        <button type="submit" ng-click="cart.checkoutAPI({ccNo: ccNo, expMonth: expMonth, expYear: expYear, cvv: cvv})" class="btn green" value="1">{{ 'SUBMIT_PAYMENT' | translate }}</button>
+	    </div>
+	    <div class="clear"></div>
+	</div>

@@ -1,0 +1,224 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Book keepingSuite.com</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="@routes.Assets.at("css/ie/html5shiv.js")" type="text/javascript"></script><![endif]-->
+		<script src="@routes.Assets.at("js/lib/v1/jquery.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("js/lib/v1/jquery.dropotron.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("js/lib/v1/bootstrap.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("js/lib/v1/skel.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("js/lib/v1/skel-layers.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("js/app/etc/init.js")" type="text/javascript"></script>
+		<noscript>
+			
+		</noscript>
+		
+		<link rel="stylesheet" href="@routes.Assets.at("css/bootstrap.min.css")" />
+		<link rel="stylesheet" href="@routes.Assets.at("css/bootstrap-theme.min.css")" />
+		<link rel="stylesheet" href="@routes.Assets.at("css/skel.css")" />
+		<!-- <link rel="stylesheet" href="@routes.Assets.at("css/style.css")" /> -->
+		<link rel="stylesheet" href="@routes.Assets.at("css/style-wide.css")" />
+		<link rel="stylesheet" href="@routes.Assets.at("css/bsHome.css")" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="@routes.Assets.at("css/ie/v8.css")" /><![endif]-->
+		
+		
+	
+		
+		
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div>
+				@common.header(title)
+			</div>
+
+		<!-- Banner -->
+			<!--  <section id="banner"> 
+				<p style="color:white;text-align:left;padding-left:8cm;padding-top:2cm">
+						Whether you are managing a start-up,<br/>
+						smal business or a large company,<br/>
+						yoursite can privde a<br/> 
+						streamlined yoursite service <br/>
+						for your business.
+				</p>
+				<header style="text-align:left;padding-left:8cm">
+					<h2>We manage the yoursite, so you can manage the business.</h2>
+					<a href="#" class="button">Sign Up</a>
+				</header>
+			</section> -->
+			
+			
+			<!-- style="background-image: url('/assets/images/banner_plain.jpg');background-repeat: no-repeat;" -->
+    <div id="myCarousel" class="carousel slide" data-interval="5000" data-ride="carousel" >
+    	<!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>   
+       <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="active item">
+	            <div class="col-md-5">
+	                <div class="slideContent">
+	                	<div><h2>We manage the yoursite, So you can manage the business.</h2>
+	                	<p>Whether you are managing a start-up, small business or a large company, yoursite.com can provide a streamlined yoursite service for your business</p> 
+	                	</div>
+	                	<div style="padding-left:8em"><a href="/packages" class="button" >Sign Up</a></div>
+	                </div>
+	            </div>
+            	<div class="col-md-7">
+            		<img class="carouselImg" src="/assets/images/guy.jpg">
+            	</div>
+            </div>
+            
+            <div class="item">
+	            <div class="col-md-5">
+	                <div class="slideContent">
+	                	<h2>Some good tagline here, We will manage your medium business yoursite.</h2>
+	                	<p>Whether you are managing a start-up, small business or a large company, yoursite.com can provide a streamlined yoursite service for your business</p> 
+	                	<div style="padding-left:8em"><a href="/packages" class="button" >Sign Up</a></div>
+	                </div>
+	            </div>
+            	<div class="col-md-7">
+            		<img class="carouselImg" src="/assets/images/girl.jpg">
+            	</div>
+            </div>
+            
+            <div class="item">
+	            <div class="col-md-5">
+	                <div class="slideContent">
+	                	<h2>We manage the yoursite, So you can manage the business.</h2>
+	                	<p>Whether you are managing a start-up, small business or a large company, yoursite.com can provide a streamlined yoursite service for your business</p> 
+	                	<div style="padding-left:8em"><a href="/packages" class="button" >Sign Up</a></div>
+	                </div>
+	            </div>
+            	<div class="col-md-7">
+            		<img class="carouselImg" src="/assets/images/boss.jpg">
+            	</div>
+            </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+		<!-- Highlights -->
+			<section class="wrapper icon style1">
+				<div class="container">
+					<div class="row 200%">
+						<section class="3u 12u(narrower)">
+							<div class="box highlight">
+								<i class="icon major fa-pencil"></i>
+								<h3>PAPERLESS yoursite</h3>
+								<p>yoursite understand that running a business is very demanding and keeping paperwork is a task. So we come up with a solution for you.</p>
+							</div>
+						</section>
+						<section class="3u 12u(narrower)">
+							<div class="box highlight">
+								<i class="icon major fa-briefcase"></i>
+								<h3>DEDICATED BOOKsuper</h3>
+								<p>yoursite understand the importance of having professionals working for your business. So we come up with a solution for you.</p>
+							</div>
+						</section>
+						<section class="3u 12u(narrower)">
+							<div class="box highlight">
+								<i class="icon major fa-users"></i>
+								<h3>TAX TIME <br>SUPPORT</h3>
+								<p>yoursite knows that regulations and policies need to be met to keep your business running. So we come up with a solution for you.</p>
+							</div>
+						</section>
+						<section class="3u 12u(narrower)">
+							<div class="box highlight">
+								<i class="icon major fa-usd"></i>
+								<h3>FINANCIAL PERFORMANCE</h3>
+								<p>yoursite knows that you need to monitor your business performance and you can do this with up-to-date financial records. So we come up with a solution for you.</p>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		<!-- Gigantic Heading -->
+			<section class="wrapper style2">
+				<div class="container">
+					<header class="major">
+						<h2>A gigantic heading you can use for whatever</h2>
+						<p>With a much smaller subtitle hanging out just below it</p>
+					</header>
+				</div>
+			</section>
+
+		<!-- Posts -->
+			<section class="wrapper style1">
+				<div class="container">
+					<div class="row">
+						<section class="6u 12u(narrower)">
+							<div class="box post">
+								<a href="#" class="image left"><img src="@routes.Assets.at("images/pic01.jpg")" alt="" /></a>
+								<div class="inner">
+									<h3>The First Thing</h3>
+									<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+								</div>
+							</div>
+						</section>
+						<section class="6u 12u(narrower)">
+							<div class="box post">
+								<a href="#" class="image left"><img src="@routes.Assets.at("images/pic02.jpg")" alt="" /></a>
+								<div class="inner">
+									<h3>The Second Thing</h3>
+									<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="row">
+						<section class="6u 12u(narrower)">
+							<div class="box post">
+								<a href="#" class="image left"><img src="@routes.Assets.at("images/pic03.jpg")" alt="" /></a>
+								<div class="inner">
+									<h3>The Third Thing</h3>
+									<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+								</div>
+							</div>
+						</section>
+						<section class="6u 12u(narrower)">
+							<div class="box post">
+								<a href="#" class="image left"><img src="@routes.Assets.at("images/pic04.jpg")" alt="" /></a>
+								<div class="inner">
+									<h3>The Fourth Thing</h3>
+									<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		<!-- CTA -->
+			<section id="cta" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h2>Are you ready to continue your quest?</h2>
+						<a href="#" class="button">Insert Coin</a>
+					</header>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<div>
+				@common.footer(title)
+			</div>
+
+	</body>
+</html>
